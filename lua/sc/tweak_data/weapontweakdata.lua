@@ -489,7 +489,7 @@ local crew_wep_preset = {
 			self[ wep_id ].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
 		end
 		
-		if job == "chew" or job == "glace" then
+		if job == "chew" or job == "bridge" or job == "hox_1" then
 			self.swat_van_turret_module.HEALTH_INIT = 675
 			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 90
 			self.swat_van_turret_module.AUTO_REPAIR = false
@@ -588,7 +588,7 @@ local crew_wep_preset = {
 			self[ wep_id ].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
 		end
 		
-		if job == "chew" or job == "glace" then
+		if job == "chew" or job == "bridge" or job == "hox_1" then
 			self.swat_van_turret_module.HEALTH_INIT = 787.5
 			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
 			self.swat_van_turret_module.AUTO_REPAIR = false
@@ -692,7 +692,7 @@ local crew_wep_preset = {
 		for i, wep_id in ipairs(damage_set.lmg) do
 			self[ wep_id ].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
 		end
-		if job == "chew" or job == "glace" then
+		if job == "chew" or job == "bridge" or job == "hox_1" then
 			self.swat_van_turret_module.HEALTH_INIT = 787.5
 			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
 			self.swat_van_turret_module.AUTO_REPAIR = false
@@ -801,7 +801,7 @@ local crew_wep_preset = {
 			self[ wep_id ].DAMAGE = crew_wep_preset.lmg.damage - diff_reduction
 		end
 
-		if job == "chew" or job == "glace" then
+		if job == "chew" or job == "bridge" or job == "hox_1" then
 			self.swat_van_turret_module.HEALTH_INIT = 900
 			self.swat_van_turret_module.SHIELD_HEALTH_INIT = 105
 			self.swat_van_turret_module.AUTO_REPAIR = false
