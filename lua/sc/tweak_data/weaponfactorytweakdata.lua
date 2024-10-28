@@ -5490,6 +5490,42 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 		},
 		custom_stats = { ads_speed_mult = 1.05 }
 	}
+	self.wpn_fps_smg_akmsu.override.wpn_fps_upg_i_rpk74 = {
+		stats = {
+			value = 8,
+			spread = 2,
+			recoil = 6,
+			damage = -6,
+			total_ammo_mod = 49
+		},
+		custom_stats = {
+			rof_mult = 1.10769230,
+			falloff_end_mult = 1.142857,
+			falloff_start_mult = 1.1875,
+			damage_min_mult = 0.8333333,
+			ads_speed_mult = 0.93333333,
+			alt_ammo_pickup_min_mul = 1.298245,
+			alt_ammo_pickup_max_mul = 1.298245,
+			ammo_pickup_min_mul = 1.298245,
+			ammo_pickup_max_mul = 1.298245,
+		},
+		forbids = {},
+		adds = { "wpn_fps_ass_rpk74_sound_switch" },
+		override = {
+			wpn_fps_ass_akm_body_upperreceiver_vanilla = {
+				unit = "units/payday2/weapons/wpn_fps_ass_74_pts/wpn_fps_ass_74_body_upperreceiver",
+				third_unit = "units/payday2/weapons/wpn_third_ass_74_pts/wpn_third_ass_74_body_upperreceiver"
+			},
+			wpn_upg_ak_m_akm = {
+				unit = "units/payday2/weapons/wpn_fps_ass_74_pts/wpn_fps_ass_74_m_standard",
+				third_unit = "units/payday2/weapons/wpn_third_ass_74_pts/wpn_third_ass_74_m_standard"
+			},
+			wpn_fps_upg_ak_m_quick = {
+				unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_ak_m_quick/wpn_fps_upg_ak_m_quick",
+				third_unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_ak_m_quick/wpn_third_upg_ak_m_quick"
+			}
+		}
+	}
 	self.wpn_fps_smg_akmsu.override.wpn_fps_rpg7_sight_adapter = {
 		custom_stats = { big_scope = true }
 	}
@@ -5500,6 +5536,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_snp_victor_s_mod0")
 	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_upg_o_northtac")
 	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+
+	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_upg_i_rpk74")
 
 
 	self.wpn_fps_smg_akmsu_npc.override = deep_clone(self.wpn_fps_smg_akmsu.override)
@@ -15200,6 +15238,46 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_akmsu", "resmod_x_akmsu", functi
 			}
 		}
 	}
+
+	self.wpn_fps_smg_x_akmsu.override.wpn_fps_upg_i_rpk74 = {
+		stats = {
+			value = 8,
+			spread = 1,
+			recoil = 2,
+			damage = -6,
+			total_ammo_mod = 49
+		},
+		custom_stats = {
+			falloff_end_mult = 1.038461,
+			falloff_start_mult = 1.1875,
+			damage_min_mult = 0.8333333,
+			ads_speed_mult = 0.93333333,
+			alt_ammo_pickup_min_mul = 1.298245,
+			alt_ammo_pickup_max_mul = 1.298245,
+			ammo_pickup_min_mul = 1.298245,
+			ammo_pickup_max_mul = 1.298245,
+		},
+		forbids = {},
+		adds = { "wpn_fps_ass_rpk74_sound_switch" },
+		override = {
+			wpn_fps_ass_akm_body_upperreceiver_vanilla = {
+				unit = "units/payday2/weapons/wpn_fps_ass_74_pts/wpn_fps_ass_74_body_upperreceiver",
+				third_unit = "units/payday2/weapons/wpn_third_ass_74_pts/wpn_third_ass_74_body_upperreceiver"
+			},
+			wpn_upg_ak_m_akm = {
+				unit = "units/payday2/weapons/wpn_fps_ass_74_pts/wpn_fps_ass_74_m_standard",
+				third_unit = "units/payday2/weapons/wpn_third_ass_74_pts/wpn_third_ass_74_m_standard"
+			},
+			wpn_fps_upg_ak_m_quick = {
+				unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_ak_m_quick/wpn_fps_upg_ak_m_quick",
+				third_unit = "units/pd2_dlc_tng/weapons/wpn_fps_ass_ak_m_quick/wpn_third_upg_ak_m_quick"
+			}
+		}
+	}
+
+	table.insert(self.wpn_fps_smg_x_akmsu.uses_parts, "wpn_fps_upg_i_rpk74")
+
+	self.wpn_fps_smg_x_akmsu.uses_parts = deep_clone(self.wpn_fps_smg_x_akmsu.uses_parts)
 
 end)
 
