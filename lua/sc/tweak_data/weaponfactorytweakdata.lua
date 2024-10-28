@@ -5439,6 +5439,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 		spread = 2, 
 		concealment = -2
 	}
+	self.parts.wpn_fps_smg_akmsu_fg_rail.forbids = self.parts.wpn_fps_smg_akmsu_fg_rail.forbids or {}
+	table.insert(self.parts.wpn_fps_smg_akmsu_fg_rail.forbids, "wpn_fps_pis_usp_fl_adapter")
 
 	self.wpn_fps_smg_akmsu.override = self.wpn_fps_smg_akmsu.override or {}
 
@@ -5490,6 +5492,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 		},
 		custom_stats = { ads_speed_mult = 1.05 }
 	}
+
 	self.wpn_fps_smg_akmsu.override.wpn_fps_upg_i_rpk74 = {
 		stats = {
 			value = 8,
@@ -5529,6 +5532,18 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 	self.wpn_fps_smg_akmsu.override.wpn_fps_rpg7_sight_adapter = {
 		custom_stats = { big_scope = true }
 	}
+	self.wpn_fps_smg_akmsu.override.wpn_fps_smg_schakal_vg_surefire = {
+		stats = { 
+			recoil = 4,
+			concealment = -2
+		}
+	}
+	self.wpn_fps_smg_akmsu.override.wpn_fps_pis_usp_fl_adapter = { a_obj = "a_vg" }
+
+	self.wpn_fps_smg_akmsu.adds.wpn_fps_upg_vg_ass_smg_stubby = { "wpn_fps_pis_usp_fl_adapter" }
+	self.wpn_fps_smg_akmsu.adds.wpn_fps_upg_vg_ass_smg_verticalgrip = { "wpn_fps_pis_usp_fl_adapter" }
+	self.wpn_fps_smg_akmsu.adds.wpn_fps_upg_vg_ass_smg_afg = { "wpn_fps_pis_usp_fl_adapter" }
+	self.wpn_fps_smg_akmsu.adds.wpn_fps_smg_schakal_vg_surefire = { "wpn_fps_pis_usp_fl_adapter" }
 
 	--table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_upg_ak_s_nostock")
 
@@ -5537,6 +5552,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_akmsu", "resmod_akmsu", function(s
 	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_upg_o_northtac")
 	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
+	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	table.insert(self.wpn_fps_smg_akmsu.uses_parts, "wpn_fps_upg_i_rpk74")
 
 
@@ -12500,6 +12516,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_modpack_m4_ak", "resmod_modpack_m4
 	self.parts.wpn_fps_upg_ak_fg_zenit.pcs = {}
 	self.parts.wpn_fps_upg_ak_fg_zenit.supported = true
 	self.parts.wpn_fps_upg_ak_fg_zenit.stats = {value = 1, spread = -1, concealment = 1}
+	self.parts.wpn_fps_upg_ak_fg_zenit.forbids = self.parts.wpn_fps_upg_ak_fg_zenit.forbids or {}
+	table.insert(self.parts.wpn_fps_upg_ak_fg_zenit.forbids, "wpn_fps_pis_usp_fl_adapter")
 	self.parts.wpn_fps_upg_ak_fg_zenit.override.wpn_fps_upg_o_specter = {
 		a_obj = "a_o_zenit",
 		stance_mod = { 
@@ -15275,7 +15293,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_akmsu", "resmod_x_akmsu", functi
 			}
 		}
 	}
+	self.wpn_fps_smg_x_akmsu.override.wpn_fps_smg_schakal_vg_surefire = {
+		stats = { 
+			recoil = 4,
+			concealment = -2
+		}
+	}
+	self.wpn_fps_smg_x_akmsu.override.wpn_fps_pis_usp_fl_adapter = { a_obj = "a_vg" }
+	
+	self.wpn_fps_smg_x_akmsu.adds.wpn_fps_upg_vg_ass_smg_stubby = { "wpn_fps_pis_usp_fl_adapter" }
+	self.wpn_fps_smg_x_akmsu.adds.wpn_fps_upg_vg_ass_smg_verticalgrip = { "wpn_fps_pis_usp_fl_adapter" }
+	self.wpn_fps_smg_x_akmsu.adds.wpn_fps_upg_vg_ass_smg_afg = { "wpn_fps_pis_usp_fl_adapter" }
+	self.wpn_fps_smg_x_akmsu.adds.wpn_fps_smg_schakal_vg_surefire = { "wpn_fps_pis_usp_fl_adapter" }
 
+	table.insert(self.wpn_fps_smg_x_akmsu.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 	table.insert(self.wpn_fps_smg_x_akmsu.uses_parts, "wpn_fps_upg_i_rpk74")
 
 	self.wpn_fps_smg_x_akmsu.uses_parts = deep_clone(self.wpn_fps_smg_x_akmsu.uses_parts)
@@ -35041,6 +35072,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				concealment = -1
 			}
 			self.parts.wpn_fps_smg_akmsu_fg_mar.custom_stats = nil
+			self.parts.wpn_fps_smg_akmsu_fg_mar.forbids = self.parts.wpn_fps_smg_akmsu_fg_mar.forbids or {}
+			table.insert(self.parts.wpn_fps_smg_akmsu_fg_mar.forbids, "wpn_fps_pis_usp_fl_adapter")
 	
 			self.parts.wpn_fps_upg_ak_b_galil.supported = true
 			self.parts.wpn_fps_upg_ak_b_galil.stats = {
