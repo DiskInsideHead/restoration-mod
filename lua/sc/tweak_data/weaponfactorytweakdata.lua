@@ -15248,7 +15248,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_akmsu", "resmod_x_akmsu", functi
 			total_ammo_mod = 49
 		},
 		custom_stats = {
-			falloff_end_mult = 1.038461,
+			rof_mult = 1.038461,
+			falloff_end_mult = 1.142857,
 			falloff_start_mult = 1.1875,
 			damage_min_mult = 0.8333333,
 			ads_speed_mult = 0.93333333,
