@@ -2775,6 +2775,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_t9fastburst"] = "CARV.2",
 					["bm_wp_upg_i_g11"] = "K1 Internals",
 					["bm_wp_upg_i_g11_desc"] = "Increases the burst fire rate to #{skill_color}#2100 RPM## and #{skill_color}#unlocks the fire selector.##",
+					--MW2023 STG-44 (FUCK YOU, SLEDGEHAMMER)
+					["bm_w_stango44"] = "\"STG-44\"",
+					["bm_wp_wpn_fps_ass_stango44_magazine_40"] = "30 Round Magazine",
 
 			--[[ DMRs ]]
 				--Little Friend
