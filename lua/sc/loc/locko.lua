@@ -5571,11 +5571,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Cleaner--
 				["menu_hitman_beta_sc"] = "청소부",
-				["menu_hitman_beta_desc_sc"] = "베이식: #{owned}#$basic##\n특수 및 엘리트 적에게 #{skill_color}#$skill_value_b1##만큼의 추가 피해를 가합니다.\n\n#{risk}#주의:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n특수 및 엘리트 적에게 #{skill_color}#$skill_value_p1##만큼의 추가 피해를 더 가합니다.\n\n헤드샷으로 적을 처치하면 회피 미터가 #{skill_color}#$skill_value_p2##만큼 채워집니다.\n\n적의 뒤에서 적을 처치하면 회피 미터가 #{skill_color}#$skill_value_p2##만큼 채워지고, 헤드샷 처치 시 얻는 회피율과 함께 중첩됩니다.\n\n#{risk}#주의:## #{important_1}#폭발물, 불 또는 지속 피해 효과를 사용하여## #{risk}#적을 처치해도 회피를 얻을 수 없습니다.##",
+				["menu_hitman_beta_desc_sc"] = "베이식: #{owned}#$basic##\n특수 및 엘리트 적에게 #{skill_color}#$skill_value_b1##만큼의 추가 피해를 가합니다.\n\n#{risk}#주의:## #{important_1}#발사기에는## #{risk}#적용되지 않습니다.##\n\n에이스: #{owned}#$pro##\n특수 및 엘리트 적에게 #{skill_color}#$skill_value_p1##만큼의 추가 피해를 더 가합니다.\n\n헤드샷으로 적을 처치하면 회피 미터가 #{skill_color}#$skill_value_p2##만큼 채워집니다.\n\n적의 뒤에서 적을 처치하면 회피 미터가 #{skill_color}#$skill_value_p3##만큼 채워지고, 헤드샷 처치 시 얻는 회피율과 함께 중첩됩니다.\n\n#{risk}#주의:## #{important_1}#폭발물, 불 또는 지속 피해 효과를 사용하여## #{risk}#적을 처치해도 회피를 얻을 수 없습니다.##",
 
 				--Low Blow--
 				["menu_unseen_strike_beta_sc"] = "로 블로",
-				["menu_unseen_strike_beta_desc_sc"] = "베이식: #{owned}#$basic##\n당신의 착용감이 #{risk}#$skill_value_b3##부터 #{risk}#$skill_value_b2##포인트만큼 감소할 때마다 치명타 확률이 #{skill_color}#$skill_value_b1##만큼 상승합니다. 최대 치명타는 #{skill_color}#$skill_value_b4##입니다.\n\n치명타 발생 시 #{skill_color}#50%##만큼 추가 피해를 가합니다.\n\n에이스: #{owned}#$pro##\n당신의 착용감이 #{risk}#$skill_value_p2##부터 #{risk}#$skill_value_p3##포인트만큼 감소할 때마다 치명타 확률이 #{skill_color}#$skill_value_p1##만큼 상승합니다. 최대 치명타는 #{skill_color}#$skill_value_p4##입니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 #{skill_color}#$skill_value_p5##만큼 추가로 증가합니다.",
+				["menu_unseen_strike_beta_desc_sc"] = "베이식: #{owned}#$basic##\n당신의 착용감이 #{risk}#$skill_value_b3##부터 #{risk}#$skill_value_b2##포인트만큼 감소할 때마다 치명타 확률이 #{skill_color}#$skill_value_b1##만큼 상승합니다. 최대 치명타는 #{skill_color}#$skill_value_b4##입니다.\n\n치명타 발생 시 #{skill_color}#50%##만큼 추가 피해를 가합니다.\n\n에이스: #{owned}#$pro##\n당신의 착용감이 #{risk}#$skill_value_p3##부터 #{risk}#$skill_value_p2##포인트만큼 감소할 때마다 치명타 확률이 #{skill_color}#$skill_value_p1##만큼 상승합니다. 최대 치명타는 #{skill_color}#$skill_value_p4##입니다.\n\n적의 뒤에서 총이나 근접 공격으로 공격할 때 치명타 확률이 #{skill_color}#$skill_value_p5##만큼 추가로 증가합니다.",
 
 		--[[   FUGITIVE   ]]--
 
@@ -5785,7 +5785,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Anarchist--
 		["menu_st_spec_15"] = "아나키스트", --there's a random space at the end of the original string
-		["menu_deck15_1_desc_sc"] = "전투에서 벗어난 뒤 방탄복을 완전히 회복하는 대신, 아나키스트는 주기적으로 매 초마다 방탄력을 #{skill_color}#8##씩 회복합니다. 방탄복이 두터울수록 틱당 더 많은 방탄량을 회복하지만, 회복이 일어나는 틱당 시간 간격이 길어집니다.\n\n#{risk}#주의: 이 특성 덱을 사용하는 동안은 방탄복 회복 속도를 높이거나 방탄복 재생과 관련된 방탄복 회복 대기 시간 감소가 있는 스킬과 특성 덱의 효과는 비활성화됩니다.##",
+		["menu_deck15_1_desc_sc"] = "전투에서 벗어난 뒤 방탄복을 완전히 회복하는 대신, 아나키스트는 주기적으로 매 초마다 방탄력을 #{skill_color}#8##씩 회복합니다. 방탄복이 두터울수록 간격당 더 많은 방탄량을 회복하지만, 회복이 일어나는 간격이 길어집니다.\n\n#{risk}#주의: 이 특성 덱을 사용하는 동안은 방탄복 회복 속도를 높이거나 방탄복 재생과 관련된 방탄복 회복 대기 시간 감소가 있는 스킬과 특성 덱의 효과는 비활성화됩니다.##",
 		["menu_deck15_3_desc_sc"] = "최대 체력이 #{risk}#$perk_value_1## 감소하고 감소한 수치의 #{skill_color}#$perk_value_2##가 방탄량으로 전환되어 추가됩니다.",
 		["menu_deck15_5_desc_sc"] = "최대 체력이 #{risk}#$perk_value_1## 감소하고 감소한 수치의 #{skill_color}#$perk_value_2##가 방탄량으로 전환되어 추가됩니다.\n\n당신과 당신의 텀원에게 위협을 느낀 시민은 ##$perk_value_2##만큼 더 오랫동안 위협을 받습니다.",
 		["menu_deck15_7_desc_sc"] = "최대 체력이 #{risk}#$perk_value_1## 감소하고 감소한 수치의 #{skill_color}#$perk_value_2##가 방탄량으로 전환되어 추가됩니다.",
@@ -5924,7 +5924,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 			--Maniac
 			["menu_deck14_mrwi_desc"] = "당신이 가한 대미지는 최대 ##$perk_value_1##까지 히스테리아 스택으로 변환됩니다.\n\n히스테리아 스택:\n매 ##$perk_value_3##의 히스테리아당 ##$perk_value_2##만큼의 받는 피해가 감소합니다. 히스테리아 스택은 매 ##$perk_value_5##초마다 ##$perk_value_4##씩 감소합니다.\n\n당신과 당신의 텀원에게 위협을 느낀 시민은 ##$perk_value_6##만큼 오랫동안 위협을 받습니다.",
 			--Anarchist
-			["menu_deck15_mrwi_desc"] = "전투에서 벗어난 뒤 방탄복을 완전히 회복하는 대신, 아나키스트는 주기적으로 매 초마다 방탄력을 ##8##씩 회복합니다. 방탄복이 두터울수록 틱당 더 많은 방탄량을 회복하지만, 회복이 일어나는 틱당 시간 간격이 길어집니다.\n\n주의: 이 특성 덱을 사용하는 동안은 방탄복 회복 속도를 높이거나 방탄복 재생과 관련된 방탄복 회복 대기 시간 감소가 있는 스킬과 특성 덱의 효과는 비활성화됩니다.\n\n당신과 당신의 텀원에게 위협을 느낀 시민은 ##$perk_value_1##만큼 오랫동안 위협을 받습니다.",
+			["menu_deck15_mrwi_desc"] = "전투에서 벗어난 뒤 방탄복을 완전히 회복하는 대신, 아나키스트는 주기적으로 매 초마다 방탄력을 ##8##씩 회복합니다. 방탄복이 두터울수록 간격당 더 많은 방탄량을 회복하지만, 회복이 일어나는 간격이 길어집니다.\n\n주의: 이 특성 덱을 사용하는 동안은 방탄복 회복 속도를 높이거나 방탄복 재생과 관련된 방탄복 회복 대기 시간 감소가 있는 스킬과 특성 덱의 효과는 비활성화됩니다.\n\n당신과 당신의 텀원에게 위협을 느낀 시민은 ##$perk_value_1##만큼 오랫동안 위협을 받습니다.",
 			--Biker
 			["menu_deck16_mrwi_desc"] = "자신 또는 팀원이 적을 처치할 때마다 #{skill_color}#$perk_value_1##의 체력을 회복합니다. 이 효과는 매 #{important_1}#$perk_value_2##초마다 발동됩니다.\n\n시체를 가방에 넣거나 인질과 상호 작용하는 속도가 ##$perk_value_3##만큼 빨라집니다.",
 			--Kingpin
