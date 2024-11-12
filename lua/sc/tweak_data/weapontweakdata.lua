@@ -4814,6 +4814,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 	}
 	for i, wep_id in ipairs(recat) do
 		self[ wep_id ].always_hipfire = true
+		self[ wep_id ].is_bullpup = true
 	end
 
 	--Weapon specific attachment category names
@@ -20513,6 +20514,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.xm214a.spin_up_t = 0.25
 				self.xm214a.spin_down_t = 0.5
 				self.xm214a.always_hipfire = true
+				self.xm214a.is_bullpup = true
 				self.xm214a.always_play_anims = true
 				self.xm214a.no_reload_anims = true
 				self.xm214a.sounds.no_fix = true
@@ -20553,6 +20555,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sidewinder.timers.reload_exit_empty = 0.9
 			self.sidewinder.timers.reload_empty = 3.9
 			self.sidewinder.always_hipfire = true
+			self.sidewinder.is_bullpup = true
 			self.sidewinder.always_play_anims = true
 		end
 
@@ -21178,6 +21181,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.sasha.spin_up_shoot = nil
 			self.sasha.spin_up_anims = true
 			self.sasha.always_hipfire = true
+			self.sasha.is_bullpup = true
 			self.sasha.weapon_movement_penalty = sms_preset.mini_40
 			self.sasha.sms = sms_preset.mini_40
 			self.sasha.alt_shotgunraycast = true
@@ -21226,6 +21230,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.abzats.spin_down_t = 0.00000001
 			self.abzats.spin_up_shoot = true
 			self.abzats.always_hipfire = true
+			self.abzats.is_bullpup = true
 			self.abzats.reload_speed_multiplier = 0.85
 			self.abzats.timers.reload_exit_empty = 1.2
 			self.abzats.timers.reload_exit_not_empty = 1.2
