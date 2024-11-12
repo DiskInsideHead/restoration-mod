@@ -6098,7 +6098,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.breech.AMMO_MAX = 75
 						self.breech.CLIP_AMMO_MAX = 8
 						self.breech.fire_mode_data.fire_rate = 0.0882352
-						self.breech.kick = self.stat_info.kick_tables.even_recoil
+						self.breech.kick = self.stat_info.kick_tables.left_recoil
 						self.breech.supported = true
 						self.breech.ads_speed = 0.120
 						self.breech.damage_falloff = {
@@ -18015,7 +18015,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.stango44.stats = {
 					damage = 30,
 					spread = 81,
-					recoil = 79,
+					recoil = 77,
 					spread_moving = 5,
 					zoom = 1,
 					concealment = 25,
