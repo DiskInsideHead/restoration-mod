@@ -38706,6 +38706,58 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
+	if self.parts.wpn_fps_sho_bp12_b_std then
+
+		self.parts.wpn_fps_sho_bp12_burst.custom_stats = nil
+		self.parts.wpn_fps_sho_bp12_burst.perks = nil
+
+		self.parts.wpn_fps_sho_bp12_b_ext.supported = true
+		self.parts.wpn_fps_sho_bp12_b_ext.stats = deep_clone{barrels.long_b2_stats}
+		self.parts.wpn_fps_sho_bp12_b_ext.custom_stats = deep_clone{barrels.long_b2_stats}
+		self.parts.wpn_fps_sho_bp12_b_short.supported = true
+		self.parts.wpn_fps_sho_bp12_b_short.stats = deep_clone{barrels.short_b1_stats}
+		self.parts.wpn_fps_sho_bp12_b_short.custom_stats = deep_clone{barrels.short_b1_stats}
+
+		self.parts.wpn_fps_sho_bp12_m_ext.supported = true
+		self.parts.wpn_fps_sho_bp12_m_ext.stats = {
+			value = 8,
+			extra_ammo = 9,
+			reload = -5,
+			concealment = -3
+		}
+		self.parts.wpn_fps_sho_bp12_m_ext.custom_stats = {
+			ads_speed_mult = 1.075
+		}
+
+		self.parts.wpn_fps_sho_bp12_m_quick.supported = true
+		self.parts.wpn_fps_sho_bp12_m_quick.stats = {
+			value = 6,
+			spread = -1,
+			reload = 3,
+			concealment = -1
+		}
+		self.parts.wpn_fps_sho_bp12_m_quick.custom_stats = nil
+
+		self.parts.wpn_fps_sho_bp12_m_short.supported = true
+		self.parts.wpn_fps_sho_bp12_m_short.stats = {
+			value = 2,
+			extra_ammo = -3,
+			reload = 5,
+			concealment = 2
+		}
+		self.parts.wpn_fps_sho_bp12_m_short.custom_stats = { ads_speed_mult = 0.95 }
+
+
+		self.parts.wpn_fps_sho_bp12_s_ext.supported = true
+		self.parts.wpn_fps_sho_bp12_s_ext.stats = { 
+			value = 2,
+			recoil = 2,
+			concealment = -1
+		}
+
+
+	end
+
 	if self.parts.wpn_fps_shot_spas15_mag then
 		self.parts.wpn_fps_shot_spas15_mag.stats = { value = 0 }
 		self.parts.wpn_fps_shot_spas15_mag.custom_stats = nil
