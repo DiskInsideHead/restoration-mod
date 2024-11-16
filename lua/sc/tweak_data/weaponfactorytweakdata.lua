@@ -2553,9 +2553,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				translation = Vector3(0, -2.2, -3.17)
 			}
 
-			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_mx63 = {
-				translation = Vector3(0, 4.8, -0.09)
-			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_sig_xm250 = {
 				translation = Vector3(0.02, 4, 0.03),
 				rotation = Rotation(0.11, -0.09, 0)
@@ -2581,8 +2578,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_sights", "resmod_sights", function
 				rotation = Rotation(-0.042, 0, 0)
 			}
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_lmg_mx63 = {
-				translation = Vector3(-0.025, 9.6, -0.225),
-				rotation = Rotation(-0.05, 0, -0.7)
+				translation = Vector3(0, 4.8, -0.09)
 			}
 
 			self.parts.wpn_fps_upg_o_specter.stance_mod.wpn_fps_snp_m200 = {
