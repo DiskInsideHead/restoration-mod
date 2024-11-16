@@ -19969,7 +19969,6 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bp12.burst = nil
 				self.bp12.fire_mode_data.burst_cooldown = nil
 				self.bp12.BURST_COUNT = nil
-				self.bp12.fire_mode_data.fire_rate = 0.13043478
 				self.bp12.BURST_FIRE_DEFAULT = true
 				self.bp12.BURST_ONLY = true
 				self.bp12.LOCK_BURST = true
@@ -19977,6 +19976,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bp12.BURST_DELAY = 0.5
 				self.bp12.BURST_FIRE_RECOIL_MULTIPLIER = 0.75
 				self.bp12.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1.05
+				self.bp12.tactical_reload = 1
 				self.bp12.CLIP_AMMO_MAX = 12
 				self.bp12.fire_mode_data.fire_rate = 0.13333
 				self.bp12.AMMO_MAX = 60
@@ -20019,6 +20019,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.or12.categories = { "shotgun" }
 				self.or12.damage_type = "shotgun"
 				self.or12.damage_type_single_ray = "sniper"
+				self.or12.tactical_reload = 1
 				self.or12.CLIP_AMMO_MAX = 30
 				self.or12.BURST_FIRE = false
 				self.or12.fire_mode_data.fire_rate = 0.15
