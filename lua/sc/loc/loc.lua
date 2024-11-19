@@ -2782,7 +2782,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_ar23_penetrator"] = "AR-23P Liberator Penetrator",
 					["bm_wp_ck_penetrator_desc"] = "A variant of the AR-23 designed to #{skill_color}#penetrate armor.##",
 					["bm_w_ar23_concussive"] = "AR-23C Liberator Concussive",
-					["bm_wp_ck_concussive_desc"] = "A variant of the AR-23 featuring #{skill_color}#concussive rounds## and a modified red-dot sight.\n\n#{skill_color}#Concussive rounds stagger enemies up to 20 meters away.##\n\n#{risk}#Stagger range cannot be modified and burst-fire is removed.##",
+					["bm_wp_ck_concussive_desc"] = "A variant of the AR-23 featuring #{skill_color}#concussive rounds## and a modified red-dot sight.\n#{skill_color}#Concussive rounds stagger enemies up to 20 meters away.##\n#{risk}#Stagger range cannot be modified and burst-fire is removed.##",
 
 			--[[ DMRs ]]
 				--Little Friend
