@@ -10046,7 +10046,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Byk-1 (OTs-14)
 						self.groza.desc_id = "bm_groza_sc_desc"
 						self.groza.has_description = true
-						self.groza.AMMO_MAX = 90
+						self.groza.AMMO_MAX = 96
 						self.groza.CLIP_AMMO_MAX = 30
 						self.groza.FIRE_MODE = "auto"
 						self.groza.fire_mode_data.fire_rate = 0.08571428571
@@ -10399,7 +10399,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					--Little Friend Rifle (HK417)
 						self.contraband.desc_id = "bm_m203_weapon_sc_desc"
 						self.contraband.has_description = true
-						self.contraband.AMMO_MAX = 60
+						self.contraband.AMMO_MAX = 64
 						self.contraband.FIRE_MODE = "auto"
 						self.contraband.fire_mode_data.fire_rate = 0.1
 						self.contraband.CAN_TOGGLE_FIREMODE = true
@@ -15977,7 +15977,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.xeno.desc_id = "bm_xeno_sc_desc"
 				self.xeno.has_description = true
 				self.xeno.CLIP_AMMO_MAX = 40
-				self.xeno.AMMO_MAX = 60
+				self.xeno.AMMO_MAX = 64
 				self.xeno.fire_mode_data.fire_rate = 0.06666666
 				self.xeno.CAN_TOGGLE_FIREMODE = false
 				self.xeno.BURST_FIRE = 4
@@ -16167,7 +16167,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.g3hk79.damage_type = "sniper"
 				self.g3hk79.has_description = true
 				self.g3hk79.desc_id = "bm_g3hk79_sc_desc"
-				self.g3hk79.AMMO_MAX = 40
+				self.g3hk79.AMMO_MAX = 48
 				self.g3hk79.tactical_reload = 1
 				self.g3hk79.CLIP_AMMO_MAX = 20
 				self.g3hk79.fire_mode_data.fire_rate = 0.12
@@ -17555,7 +17555,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.kurisumasu.BURST_FIRE = false
 				self.kurisumasu.ADAPTIVE_BURST_SIZE = false
 				self.kurisumasu.CLIP_AMMO_MAX = 30
-				self.kurisumasu.AMMO_MAX = 112
+				self.kurisumasu.AMMO_MAX = 120
 				self.kurisumasu.fire_mode_data.fire_rate = 0.0833333333
 				self.kurisumasu.kick = self.stat_info.kick_tables.moderate_kick
 				self.kurisumasu.supported = true
@@ -21428,7 +21428,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 			self.mdr_308.recategorize = {"dmr_ar"}
 			self.mdr_308.nato = true
 			self.mdr_308.damage_type = "assault_rifle"
-			self.mdr_308.AMMO_MAX = 60
+			self.mdr_308.AMMO_MAX = 64
 			self.mdr_308.tactical_reload = 1
 			self.mdr_308.CLIP_AMMO_MAX = 20
 			self.mdr_308.fire_mode_data.fire_rate = 0.092307

@@ -20259,7 +20259,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_type54", "resmod_type54", function
 	self.parts.wpn_fps_pis_type54_underbarrel.supported = true
 	self.parts.wpn_fps_pis_type54_underbarrel.stats = {
 		value = 8,
-		total_ammo_mod = -104, 
+		total_ammo_mod = -82, 
 		concealment = -4
 	}		
 	
@@ -20289,7 +20289,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_type54", "resmod_x_type54", func
 	self.parts.wpn_fps_pis_x_type54_underbarrel.supported = true
 	self.parts.wpn_fps_pis_x_type54_underbarrel.stats = {
 		value = 8,
-		total_ammo_mod = -104, 
+		total_ammo_mod = -82, 
 		concealment = -4
 	}	
 
@@ -23023,7 +23023,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_kacchainsaw", "resmod_kacchainsaw"
 	self.parts.wpn_fps_lmg_kacchainsaw_flamethrower.supported = true
 	self.parts.wpn_fps_lmg_kacchainsaw_flamethrower.stats = {
 		value = 5,
-		total_ammo_mod = -103,
+		total_ammo_mod = -83,
 		concealment = -3
 	}
 	self.parts.wpn_fps_lmg_kacchainsaw_flamethrower.custom_stats = {
