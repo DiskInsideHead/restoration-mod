@@ -31714,6 +31714,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					self.parts.wpn_fps_ass_sg416_s_standard.third_unit = "units/payday2/weapons/wpn_third_upg_m4_reusable/wpn_third_upg_m4_s_standard"
 					self.parts.wpn_fps_ass_sg416_m_standard.supported = true
 					self.parts.wpn_fps_ass_sg416_m_standard.stats = { value = 1 }
+					self.parts.wpn_fps_ass_sg416_m_standard.custom_stats = nil
 					self.parts.wpn_fps_ass_sg416_m_standard.unit = "units/payday2/weapons/wpn_fps_ass_m4_pts/wpn_fps_m4_uupg_m_std"
 					self.parts.wpn_fps_ass_sg416_m_standard.third_unit = "units/payday2/weapons/wpn_third_ass_m4_pts/wpn_third_m4_uupg_m_std"
 					self.parts.wpn_fps_ass_sg416_dh_custom.supported = true	
