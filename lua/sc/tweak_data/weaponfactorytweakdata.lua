@@ -35433,7 +35433,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					recoil = 10,
 					concealment = 1,
 					extra_ammo = 10,
-					total_ammo_mod = 200
+					total_ammo_mod = 199
 				}
 				self.parts.wpn_fps_ass_galil_body_intermediate.custom_stats = {
 					alt_desc = "bm_galil_556_sc_desc",
@@ -35507,7 +35507,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				self.parts.wpn_fps_ass_amcar_body_ddm4.stats = {
 					value = 8,
 					damage = 0,
-					total_ammo_mod = -188,
+					total_ammo_mod = -189,
 					recoil = -12,
 					spread = -3,
 					concealment = -2
