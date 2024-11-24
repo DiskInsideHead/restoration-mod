@@ -2835,8 +2835,8 @@ end
 
 local mission_script_elements = restoration:mission_script_patches()
 Hooks:PostHook(ElementSpawnEnemyDummy, "init", "sh_init", function (self)
-        local element_mapping = mission_script_elements and mission_script_elements[self._id]
-        self._enemy_mapping = element_mapping and element_mapping.enemy
+    local element_mapping = mission_script_elements and mission_script_elements[self._id]
+    self._enemy_mapping = element_mapping and element_mapping.enemy
 		
 	local ai_type = tweak_data.levels:get_ai_group_type()
 	local mapped_name = self.enemy_mapping[self._enemy_name:key()]
@@ -2846,6 +2846,9 @@ Hooks:PostHook(ElementSpawnEnemyDummy, "init", "sh_init", function (self)
 	elseif mapped_unit then
 		self._enemy_name = Idstring(mapped_unit)
 	end
+	--possible enemy tables for gen_dummy
+	self._enemy_table = self._values.enemy_table or self._enemy_table
+    self._values.enemy_table = nil
 end)
 
 Hooks:PreHook(ElementSpawnEnemyDummy, "produce", "sh_produce", function (self, params)
