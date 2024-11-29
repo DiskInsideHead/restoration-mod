@@ -447,6 +447,9 @@ function SentryGunDamage:damage_fire(attack_data)
 		damage = damage * self._char_tweak.FIRE_DMG_MUL
 	end
 
+	local object_damage_mul = weap_base and weap_base.get_object_damage_mult and weap_base:get_object_damage_mult() or 1
+	damage = damage * object_damage_mul
+
 	local dmg_shield, damage_percent = nil
 
 	if self._shield_health > 0 then
