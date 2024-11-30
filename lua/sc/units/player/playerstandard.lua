@@ -2662,11 +2662,18 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 
 	if weapon._set_burst_mode and weapon.in_burst_mode then
 		if weapon._burst_ads_toggle then
-			if self._state_data.in_full_steelsight and not weapon:in_burst_mode() then
+			if self:in_steelsight() and not weapon:in_burst_mode() then
 				weapon:_set_burst_mode(true, true)
-			elseif not self._state_data.in_full_steelsight and weapon:in_burst_mode() and not self:_in_burst() then
+			elseif not self:in_steelsight()and weapon:in_burst_mode() and not self:_in_burst() then
 				weapon:_set_burst_mode(false, true)
 				managers.hud:set_teammate_weapon_firemode(HUDManager.PLAYER_PANEL, self._unit:inventory():equipped_selection(), weapon:fire_mode())
+			end
+		elseif weapon._burst_hipfire_toggle then
+			if self:in_steelsight() and weapon:in_burst_mode() and not self:_in_burst() then
+				weapon:_set_burst_mode(false, true)
+				managers.hud:set_teammate_weapon_firemode(HUDManager.PLAYER_PANEL, self._unit:inventory():equipped_selection(), weapon:fire_mode())
+			elseif not self:in_steelsight() and not weapon:in_burst_mode() then
+				weapon:_set_burst_mode(true, true)
 			end
 		end
 	end

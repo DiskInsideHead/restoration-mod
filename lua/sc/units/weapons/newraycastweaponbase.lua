@@ -938,6 +938,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		--self._locked_fire_mode = self._locked_fire_mode or managers.weapon_factor:has_perk("fire_mode_burst", self._factory_id, self._blueprint) and Idstring("burst")
 		self._burst_size = self:weapon_tweak_data().BURST_FIRE or NewRaycastWeaponBase.DEFAULT_BURST_SIZE or 3
 		self._adaptive_burst_size = self:weapon_tweak_data().ADAPTIVE_BURST_SIZE ~= false
+		self._burst_fire_rate_multiplier_alt = self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER_ALT or nil
 		self._burst_fire_rate_multiplier = (self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER and self:weapon_tweak_data().BURST_FIRE_RATE_MULTIPLIER * 1.05) or 1.05 --small mult to help alliviate frame rounding
 		self._burst_fire_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_RECOIL_MULTIPLIER or 0.8
 		self._burst_fire_last_recoil_multiplier = self:weapon_tweak_data().BURST_FIRE_LAST_RECOIL_MULTIPLIER or 1
@@ -1701,10 +1702,12 @@ function NewRaycastWeaponBase:fire_rate_multiplier( ignore_anims )
 			local next_fire = self._macno and self._i_know or ((delay or fire_rate or 0) / no_burst_mult)
 			local current_state_name = managers.player:current_state()
 			local og_next_fire = current_state_name and current_state_name == "tased" and self._next_fire_allowed
-			self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed, self._unit:timer():time() + next_fire))
 			self._macno = nil
 			self._fire_rate_init_cancel = nil
-			multiplier = self:weapon_tweak_data().fire_rate_multiplier or 1
+			if not self._burst_fire_rate_multiplier_alt then
+				self._next_fire_allowed = og_next_fire or (math.max(self._next_fire_allowed, self._unit:timer():time() + next_fire)) 
+				multiplier = self:weapon_tweak_data().fire_rate_multiplier or 1
+			end
 		end
 	end	
 
