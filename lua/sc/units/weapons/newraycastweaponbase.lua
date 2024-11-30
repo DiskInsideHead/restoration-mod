@@ -944,6 +944,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		self._burst_fire_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_SPREAD_MULTIPLIER or 1
 		self._burst_fire_ads_spread_multiplier = self:weapon_tweak_data().BURST_FIRE_ADS_SPREAD_MULTIPLIER
 		self._burst_fire_range_multiplier = self:weapon_tweak_data().BURST_FIRE_RANGE_MULTIPLIER
+		self._burst_ads_toggle = self:weapon_tweak_data().BURST_FIRE_ADS_TOGGLE
+		self._burst_hipfire_toggle = self:weapon_tweak_data().BURST_FIRE_HIPFIRE_TOGGLE
 		--self._delayed_burst_recoil = self:weapon_tweak_data().DELAYED_BURST_RECOIL
 		self._burst_delay = self:weapon_tweak_data().BURST_DELAY or (self.AKIMBO and 0.03) or 0.09
 		self._lock_burst = self._lock_burst or self:weapon_tweak_data().LOCK_BURST

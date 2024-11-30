@@ -38768,8 +38768,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = 2,
 			concealment = -1
 		}
-
-
 	end
 
 	if self.parts.wpn_fps_ass_ar23_body then
@@ -38881,8 +38879,18 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_ck = { custom_stats = {} }
 		self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_2 = { custom_stats = {} }
 		self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_3 = { custom_stats = {} }
-		self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_3_ck = { custom_stats = {} }
-		
+		self.wpn_fps_ass_ar23.override.wpn_fps_ass_ar23_optic_3_ck = { custom_stats = {} }		
+	end
+
+	if self.parts.wpn_fps_ass_bulldog_burst then
+		self.parts.wpn_fps_ass_bulldog_burst.perks = nil
+		self.parts.wpn_fps_ass_bulldog_body.adds = nil
+		self.parts.wpn_fps_ass_bulldog_reflex.supported = true
+		self.parts.wpn_fps_ass_bulldog_reflex.stats = {
+			value = 0,
+			zoom = 3,
+			base_zoom_off = 1
+		}
 	end
 
 	if self.parts.wpn_fps_shot_spas15_mag then
