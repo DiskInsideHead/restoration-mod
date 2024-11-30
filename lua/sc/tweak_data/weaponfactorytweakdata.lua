@@ -38884,6 +38884,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	if self.parts.wpn_fps_ass_bulldog_burst then
 		self.parts.wpn_fps_ass_bulldog_burst.perks = nil
+		self.parts.wpn_fps_ass_bulldog_burst.custom_stats = nil
 		self.parts.wpn_fps_ass_bulldog_body.adds = nil
 		self.parts.wpn_fps_ass_bulldog_reflex.supported = true
 		self.parts.wpn_fps_ass_bulldog_reflex.stats = {
