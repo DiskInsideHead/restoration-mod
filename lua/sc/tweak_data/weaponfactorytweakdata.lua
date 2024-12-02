@@ -38889,8 +38889,13 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_ass_bulldog_reflex.supported = true
 		self.parts.wpn_fps_ass_bulldog_reflex.stats = {
 			value = 0,
-			zoom = 3,
+			zoom = 1,
 			base_zoom_off = 1
+		}
+		self.parts.wpn_fps_ass_bulldog_reflex_reddot.supported = true
+		self.parts.wpn_fps_ass_bulldog_reflex_reddot.stats = {
+			value = 0,
+			gadget_zoom = 3
 		}
 	end
 
