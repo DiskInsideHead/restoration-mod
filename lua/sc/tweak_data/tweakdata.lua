@@ -1663,7 +1663,7 @@ if twb.weapon_skins.mg42_cnuy_hina then --Version 0.5.0
 		"wpn_fps_upg_o_aimpoint",
 		"wpn_fps_amcar_bolt_standard",
 		"wpn_fps_upg_ns_ass_smg_firepig",
-		"wpn_fps_ass_cnuy_saori"
+		"wpn_fps_ass_m4_cnuy_saori"
 	}
 	for k, used_part_id in ipairs(twf.wpn_fps_ass_m4.uses_parts) do
 		if twf.parts[used_part_id] and twf.parts[used_part_id].type then

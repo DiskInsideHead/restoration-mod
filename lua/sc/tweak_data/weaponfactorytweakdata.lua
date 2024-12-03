@@ -4119,6 +4119,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_o_northtac")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_ass_m4_azusa_cnuy")
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_ass_m4_cnuy_saori")
 	
 	--Faster/Slower ROF mods (Unused)
 	--[[
@@ -11716,6 +11717,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_c96", "resmod_c96", function(self)
 	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_upg_vg_ass_smg_verticalgrip")
 	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
+	table.insert(self.wpn_fps_pis_c96.uses_parts, "wpn_fps_pis_c96_cnuy_satsuki")
 	
 	self.wpn_fps_pis_c96_npc.uses_parts = deep_clone(self.wpn_fps_pis_c96.uses_parts)		
 	
@@ -39313,7 +39315,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			}
 
 		--Arius AR
-			self.parts.wpn_fps_ass_cnuy_saori = {
+			self.parts.wpn_fps_ass_m4_cnuy_saori = {
 				type = "legendary",
 				name_id = "bm_wskn_m4_saori_cnuy",
 				desc_id = "bm_wskn_m4_saori_cnuy_desc_dmc",
