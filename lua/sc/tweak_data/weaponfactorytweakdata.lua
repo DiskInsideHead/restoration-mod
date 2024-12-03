@@ -4118,6 +4118,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_m4", "resmod_m4", function(self)
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_s_saintvictor_hera")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_o_northtac")
 	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+	table.insert(self.wpn_fps_ass_m4.uses_parts, "wpn_fps_ass_m4_azusa_cnuy")
 	
 	--Faster/Slower ROF mods (Unused)
 	--[[
@@ -11615,6 +11616,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_mg42", "resmod_mg42", function(sel
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_hamr")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_o_atibal")
 	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_upg_ns_ass_filter")
+	table.insert(self.wpn_fps_lmg_mg42.uses_parts, "wpn_fps_lmg_mg42_hina_cnuy")
 
 	self.wpn_fps_lmg_mg42.adds = {}
 	self.wpn_fps_lmg_mg42.override = self.wpn_fps_lmg_mg42.override or {}
@@ -39194,10 +39196,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
-	--[[😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢]]
+	--[[😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢😭💢 (soosh's Blue Archive skins)]]
 	--Version 0.5.0
-	if self.parts.wpn_fps_lmg_mg42_receiver_hinature then
-
 		--Et Omnia Vanitas
 			self.parts.wpn_fps_ass_m4_azusa_cnuy = {
 				type = "legendary",
@@ -39236,7 +39236,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					end
 				end
 			end
-
 
 		--The End: Destroyer
 			self.parts.wpn_fps_lmg_mg42_hina_cnuy = {
@@ -39283,7 +39282,6 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 
-	end
 
 
 --Make more attachments universally available, cartridge mismatching be damned
