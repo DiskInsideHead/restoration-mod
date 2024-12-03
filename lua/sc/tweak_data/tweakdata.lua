@@ -169,6 +169,12 @@ tweak_data.smg = {
 		tweak_data.sasha = {
 			hipfire_spread_mult = 0.6
 		}
+	tweak_data.bige = {
+		swap_bonus = 1 / tweak_data.smg.swap_bonus,
+		moving_spread_mult = 1 / tweak_data.smg.moving_spread_mult,
+		hipfire_spread_mult = 1.2 / tweak_data.smg.hipfire_spread_mult,
+		shake_mul = 2
+	}
 
 tweak_data.snp = {
 	swap_bonus = 1,
@@ -1589,3 +1595,28 @@ if BeardLib then
 		}
 	end
 end
+
+
+local twf = tweak_data.weapon.factory
+local twb = tweak_data.blackmarket
+--Shitty way getting this to load late/after CunnyArchive weapon skin mod; if there's a better way, do tell
+--BRATTY CODE NEEDS CORRECTION 😭💢
+if twb.weapon_skins.mg42_cnuy_hina then
+	twb.weapon_skins.mg42_cnuy_hina.default_blueprint = {
+		"wpn_fps_lmg_mg42_b_mg42",
+		"wpn_fps_lmg_mg42_n42",
+		"wpn_fps_lmg_mg42_reciever",
+		"wpn_fps_lmg_mg42_hina_cnuy"
+	}
+
+	twb.weapon_skins.mg42_cnuy_hina.parts.wpn_fps_lmg_mg42_reciever = deep_clone(twb.weapon_skins.mg42_cnuy_hina.parts.wpn_fps_lmg_mg42_receiver_hinature)
+	for k, used_part_id in ipairs(twf.wpn_fps_lmg_mg42.uses_parts) do
+		if twf.parts[used_part_id] and twf.parts[used_part_id].type then
+			if twf.parts[used_part_id].type == "barrel" then
+				twb.weapon_skins.mg42_cnuy_hina.parts[used_part_id] = deep_clone(twb.weapon_skins.mg42_cnuy_hina.parts.wpn_fps_lmg_mg42_b_hinature)
+			end
+		end
+	end
+
+end
+
