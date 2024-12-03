@@ -39231,6 +39231,11 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							adds = {},
 							unit = "units/mods/weapons/wpn_fps_upg_ass_m4_fg_vanitas_azusa/wpn_fps_upg_ass_m4_fg_vanitas_azusa"
 						}
+					elseif self.parts[used_part_id].type == "sight" and not table.contains(self.wpn_fps_ass_m4.default_blueprint, used_part_id) then
+						self.parts.wpn_fps_ass_m4_azusa_cnuy.override[used_part_id] = {
+							adds = self.parts[used_part_id].adds and deep_clone(self.parts[used_part_id].adds) or {}
+						}
+						table.insert(self.parts.wpn_fps_ass_m4_azusa_cnuy.override[used_part_id].adds, "wpn_fps_m4_uupg_fg_rail_ext")
 					elseif self.parts[used_part_id].type == "exclusive_set" then
 						table.insert(self.parts.wpn_fps_ass_m4_azusa_cnuy.forbids, used_part_id)
 					end
