@@ -39219,6 +39219,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					wpn_fps_m4_uupg_o_flipup = {
 						third_unit = "units/mods/weapons/wpn_fps_m4_o_vanitas/wpn_fps_m4_o_vanitas",
 						unit = "units/mods/weapons/wpn_fps_m4_o_vanitas/wpn_fps_m4_o_vanitas"
+					},
+					wpn_fps_m4_uupg_fg_rail_ext_dummy = {
+						unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_b_standard",
+						third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_b_standard"
 					}
 				},
 				forbids = {
@@ -39237,7 +39241,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						self.parts.wpn_fps_ass_m4_azusa_cnuy.override[used_part_id] = {
 							adds = self.parts[used_part_id].adds and deep_clone(self.parts[used_part_id].adds) or {}
 						}
-						table.insert(self.parts.wpn_fps_ass_m4_azusa_cnuy.override[used_part_id].adds, "wpn_fps_m4_uupg_fg_rail_ext")
+						table.insert(self.parts.wpn_fps_ass_m4_azusa_cnuy.override[used_part_id].adds, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
 					elseif self.parts[used_part_id].type == "exclusive_set" then
 						table.insert(self.parts.wpn_fps_ass_m4_azusa_cnuy.forbids, used_part_id)
 					end
@@ -39271,7 +39275,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 						third_unit = "units/mods/weapons/wpn_fps_lmg_mg42_n_hinature/wpn_fps_lmg_mg42_n_hinature",
 						unit = "units/mods/weapons/wpn_fps_lmg_mg42_n_hinature/wpn_fps_lmg_mg42_n_hinature"
 					}
-				}
+				},
+				forbids = {}
 			}
 			for k, used_part_id in ipairs(self.wpn_fps_lmg_mg42.uses_parts) do
 				if self.parts[used_part_id] and self.parts[used_part_id].type then
@@ -39285,6 +39290,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 							third_unit = "units/mods/weapons/wpn_fps_lmg_mg42_n_hinature/wpn_fps_lmg_mg42_n_hinature",
 							unit = "units/mods/weapons/wpn_fps_lmg_mg42_n_hinature/wpn_fps_lmg_mg42_n_hinature"
 						}
+					elseif self.parts[used_part_id].type == "sight" then
+						table.insert(self.parts.wpn_fps_lmg_mg42_hina_cnuy.forbids, used_part_id)
 					end
 				end
 			end
@@ -39333,6 +39340,10 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					wpn_fps_m4_uupg_o_flipup = {
 						third_unit = "units/mods/weapons/wpn_fps_m4_o_vanitas/wpn_fps_m4_o_vanitas",
 						unit = "units/mods/weapons/wpn_fps_m4_o_vanitas/wpn_fps_m4_o_vanitas"
+					},
+					wpn_fps_m4_uupg_fg_rail_ext_dummy = {
+						unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_fps_ass_tecci_b_standard",
+						third_unit = "units/pd2_dlc_opera/weapons/wpn_fps_ass_tecci_pts/wpn_third_ass_tecci_b_standard"
 					}
 				},
 				forbids = {
@@ -39342,22 +39353,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			for k, used_part_id in ipairs(self.wpn_fps_ass_m4.uses_parts) do
 				if self.parts[used_part_id] and self.parts[used_part_id].type then
 					if self.parts[used_part_id].type == "foregrip" then
-						self.parts.wpn_fps_ass_cnuy_saori.override[used_part_id] = {
+						self.parts.wpn_fps_ass_m4_cnuy_saori.override[used_part_id] = {
 							override = {},
 							adds = {},
 							unit = "units/mods/weapons/wpn_fps_upg_ass_m4_fg_vanitas/wpn_fps_upg_ass_m4_fg_vanitas"
 						}
 					elseif self.parts[used_part_id].type == "vertical_grip" then
-						self.parts.wpn_fps_ass_cnuy_saori.override[used_part_id] = {
+						self.parts.wpn_fps_ass_m4_cnuy_saori.override[used_part_id] = {
 							unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 						}
 					elseif self.parts[used_part_id].type == "sight" and not table.contains(self.wpn_fps_ass_m4.default_blueprint, used_part_id) then
-						self.parts.wpn_fps_ass_cnuy_saori.override[used_part_id] = {
+						self.parts.wpn_fps_ass_m4_cnuy_saori.override[used_part_id] = {
 							adds = self.parts[used_part_id].adds and deep_clone(self.parts[used_part_id].adds) or {}
 						}
-						table.insert(self.parts.wpn_fps_ass_cnuy_saori.override[used_part_id].adds, "wpn_fps_m4_uupg_fg_rail_ext")
+						table.insert(self.parts.wpn_fps_ass_m4_cnuy_saori.override[used_part_id].adds, "wpn_fps_m4_uupg_fg_rail_ext_dummy")
 					elseif self.parts[used_part_id].type == "exclusive_set" then
-						table.insert(self.parts.wpn_fps_ass_cnuy_saori.forbids, used_part_id)
+						table.insert(self.parts.wpn_fps_ass_m4_cnuy_saori.forbids, used_part_id)
 					end
 				end
 			end
