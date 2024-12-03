@@ -39287,6 +39287,78 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 				end
 			end
 
+		--NK Delta
+			self.parts.wpn_fps_pis_c96_cnuy_satsuki = {
+				type = "legendary",
+				name_id = "bm_wskn_c96_satsuki_cnuy",
+				desc_id = "bm_wskn_c96_satsuki_cnuy_desc_dmc",
+				is_a_unlockable = true,
+				a_obj = "a_body",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				supported = true,
+				stats = { value = 0 },
+				internal_part = false,
+				texture_bundle_folder = "boost_in_lootdrop",
+				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
+				has_description = true,
+				override = {
+					wpn_fps_pis_c96_body_standard = {
+						unit = "units/mods/weapons/wpn_fps_pis_c96_body_mkultra/wpn_fps_pis_c96_body_mkultra" 
+					},
+					wpn_fps_pis_c96_g_standard = {
+						unit = "units/mods/weapons/wpn_fps_pis_c96_g_mkultra/wpn_fps_pis_c96_g_mkultra" 
+					}
+				}
+			}
+
+		--Arius AR
+			self.parts.wpn_fps_ass_cnuy_saori = {
+				type = "legendary",
+				name_id = "bm_wskn_m4_saori_cnuy",
+				desc_id = "bm_wskn_m4_saori_cnuy_desc_dmc",
+				is_a_unlockable = true,
+				a_obj = "a_body",
+				unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+				supported = true,
+				stats = { value = 0 },
+				internal_part = false,
+				texture_bundle_folder = "boost_in_lootdrop",
+				alt_icon = "guis/dlcs/boost_in_lootdrop/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_bonus_concealment_p3",
+				has_description = true,
+				override = {
+					wpn_fps_m4_uupg_o_flipup = {
+						third_unit = "units/mods/weapons/wpn_fps_m4_o_vanitas/wpn_fps_m4_o_vanitas",
+						unit = "units/mods/weapons/wpn_fps_m4_o_vanitas/wpn_fps_m4_o_vanitas"
+					}
+				},
+				forbids = {
+					"wpn_fps_m4_uupg_b_sd"
+				}
+			}
+			for k, used_part_id in ipairs(self.wpn_fps_ass_m4.uses_parts) do
+				if self.parts[used_part_id] and self.parts[used_part_id].type then
+					if self.parts[used_part_id].type == "foregrip" then
+						self.parts.wpn_fps_ass_cnuy_saori.override[used_part_id] = {
+							override = {},
+							adds = {},
+							unit = "units/mods/weapons/wpn_fps_upg_ass_m4_fg_vanitas/wpn_fps_upg_ass_m4_fg_vanitas"
+						}
+					elseif self.parts[used_part_id].type == "vertical_grip" then
+						self.parts.wpn_fps_ass_cnuy_saori.override[used_part_id] = {
+							unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+						}
+					elseif self.parts[used_part_id].type == "sight" and not table.contains(self.wpn_fps_ass_m4.default_blueprint, used_part_id) then
+						self.parts.wpn_fps_ass_cnuy_saori.override[used_part_id] = {
+							adds = self.parts[used_part_id].adds and deep_clone(self.parts[used_part_id].adds) or {}
+						}
+						table.insert(self.parts.wpn_fps_ass_cnuy_saori.override[used_part_id].adds, "wpn_fps_m4_uupg_fg_rail_ext")
+					elseif self.parts[used_part_id].type == "exclusive_set" then
+						table.insert(self.parts.wpn_fps_ass_cnuy_saori.forbids, used_part_id)
+					end
+				end
+			end
 
 
 --Make more attachments universally available, cartridge mismatching be damned
