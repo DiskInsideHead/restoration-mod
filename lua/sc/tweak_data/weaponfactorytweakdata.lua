@@ -9719,6 +9719,7 @@ end)
 Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(self)
 
 	self.parts.wpn_fps_ass_famas_m_standard_dummy = deep_clone(self.parts.wpn_fps_ass_famas_m_standard)
+	self.parts.wpn_fps_ass_famas_m_standard_dummy.type = "shitass_m"
 	self.parts.wpn_fps_ass_famas_m_standard_dummy.visibility = {
 		{
 			objects = {
@@ -9768,11 +9769,16 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac")
 	table.insert(self.wpn_fps_ass_famas.uses_parts, "wpn_fps_upg_o_northtac_reddot")
 
+	self.wpn_fps_ass_famas.adds.wpn_fps_upg_o_northtac = {
+		"wpn_fps_ass_famas_o_adapter"
+	}
+	
 	self.wpn_fps_ass_famas.override = self.wpn_fps_ass_famas.override or {}
 	self.wpn_fps_ass_famas.override.wpn_fps_snp_model70_iron_sight = { 
 		adds = {"wpn_fps_gre_arbiter_o_standard", "wpn_fps_ass_groza_o_adapter"}
 	}
 
+	self.wpn_fps_ass_famas_npc.adds = deep_clone(self.wpn_fps_ass_famas.adds)	
 	self.wpn_fps_ass_famas_npc.override = deep_clone(self.wpn_fps_ass_famas.override)	
 	self.wpn_fps_ass_famas_npc.uses_parts = deep_clone(self.wpn_fps_ass_famas.uses_parts)	
 end)		
