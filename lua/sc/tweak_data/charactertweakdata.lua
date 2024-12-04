@@ -2718,11 +2718,11 @@ function CharacterTweakData:_init_tank(presets)
 	self.tank_titan_assault.tags = {"law", "tank", "special", "tank_titan"}
 	self.tank_titan_assault.spawn_sound_event_2 = "cloaker_spawn"
 	if self:get_ai_group_type() == "federales" then
-		self.tank_titan.dt_suppress = {
+		self.tank_titan_assault.dt_suppress = {
 			range = 600
 	}
 	else
-		self.tank_titan.dt_suppress = nil
+		self.tank_titan_assault.dt_suppress = nil
 	end
 	table.insert(self._enemy_list, "tank_titan_assault")
 
