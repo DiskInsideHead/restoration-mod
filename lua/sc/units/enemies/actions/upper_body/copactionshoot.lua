@@ -128,7 +128,7 @@ function CopActionShoot:init(action_desc, common_data)
 	self._draw_focus_displacement = nil
 	self._draw_focus_delay_vis_reset = nil
 
-	if not self._shield and not weapon_usage_tweak.no_melee then
+	if not weapon_usage_tweak.no_melee then
 		local melee_weapon = self._ext_base.melee_weapon and self._ext_base:melee_weapon()
 
 		if melee_weapon then
@@ -172,6 +172,10 @@ function CopActionShoot:init(action_desc, common_data)
 				if self._w_usage_tweak.melee_speed then
 					speed = self._w_usage_tweak.melee_speed
 				end
+				
+				if self._w_usage_tweak.melee_range then
+					range = self._w_usage_tweak.melee_range
+				end				
 			else
 				if self._common_data.char_tweak.melee_weapon_dmg_multiplier then
 					dmg_mul = self._common_data.char_tweak.melee_weapon_dmg_multiplier
