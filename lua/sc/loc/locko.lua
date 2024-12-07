@@ -5036,7 +5036,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 		["mutator_fatroll"] = "팻 롤",
 		["menu_mutator_fatroll"] = "유예 기간 (초 단위)",
-		["mutator_fatroll_desc"] = "사용자 정의 피해 유예 값 (초 단위).",
+		["mutator_fatroll_desc"] = "피해 유예 값을 바꿉니다. (초 단위).",
 		["mutator_fatroll_longdesc"] = "플레이어와 AI 팀원의 피해 유예를 특정 값으로 변경합니다. 피해 유예는 대미지 인스턴스가 계산되는 빈도에 영향을 미치며, 값이 낮을수록 더 짧은 시간에 더 많은 피해를 입게 됩니다.",
 		
 		["mutator_overheal"] = "과치료 전문의",
