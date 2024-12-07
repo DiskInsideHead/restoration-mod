@@ -128,7 +128,8 @@ function CopActionShoot:init(action_desc, common_data)
 	self._draw_focus_displacement = nil
 	self._draw_focus_delay_vis_reset = nil
 
-	if not weapon_usage_tweak.no_melee then
+	--I'M GONNA BLAST EM INTO TEENY TINY LITTLE PIECES
+	if not self._shield and not weapon_usage_tweak.no_melee then
 		local melee_weapon = self._ext_base.melee_weapon and self._ext_base:melee_weapon()
 
 		if melee_weapon then
