@@ -1236,6 +1236,8 @@ function CharacterTweakData:_init_city_swat(presets)
 	--for shieldless titan units
 	self.city_swat_titan.modify_health_on_tweak_change = true
 	self.city_swat_titan.tmp_invulnerable_on_tweak_change = 1.5 --better than 3 seconds
+	--Just in case
+	self.city_swat_titan.ewgf = nil
 	table.insert(self._enemy_list, "city_swat_titan")
 	
 	--Titan SWAT (Shotgunner)
@@ -3146,7 +3148,6 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"
 	self.phalanx_minion_assault.spawn_sound_event_3 = "hos_shield_indication_sound_terminator_style" --that's a big ass name
 	self.phalanx_minion_assault.no_retreat = false
-	self.phalanx_minion_assault.ewgf = nil
 	table.insert(self._enemy_list, "phalanx_minion_assault")
 end
 
