@@ -1419,6 +1419,8 @@ function CharacterTweakData:_init_marshal_shield(presets)
 	self.marshal_shield.damage.immune_to_knockback = true
 	self.marshal_shield.immune_to_knock_down = true
 	self.marshal_shield.use_animation_on_fire_damage = false
+	self.marshal_shield.melee_push_multiplier = 2
+	self.marshal_shield.melee_force_crouch = true
 	self.marshal_shield.flammable = true
 	self.marshal_shield.weapon_voice = "3"
 	self.marshal_shield.experience.cable_tie = "tie_swat"
@@ -3022,6 +3024,8 @@ function CharacterTweakData:_init_shield(presets)
 	self.shield.weapon.is_pistol.melee_dmg = enemy_melee_damage_base
 	self.shield.weapon.is_pistol.melee_retry_delay = {2, 2}
 	self.shield.weapon.is_pistol.melee_range = 200
+	self.shield.melee_push_multiplier = 2
+	self.shield.melee_force_crouch = true
 	self.shield.static_weapon_preset = true
 	self.shield.detection = presets.detection.normal
 	self.shield.HEALTH_INIT = 15
@@ -3117,6 +3121,10 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion.suppression = nil
 	self.phalanx_minion.is_special = true
 	self.phalanx_minion.rotation_speed = 0.75
+	self.phalanx_minion.ewgf = {
+        duration = 1.5,
+        power = 0.75
+    }
 	self.phalanx_minion.no_asu = true
 	self.phalanx_minion.no_retreat = true
 	self.phalanx_minion.speech_prefix_p1 = "fug"
@@ -3138,6 +3146,7 @@ function CharacterTweakData:_init_phalanx_minion(presets)
 	self.phalanx_minion_assault.spawn_sound_event_2 = "cloaker_spawn"
 	self.phalanx_minion_assault.spawn_sound_event_3 = "hos_shield_indication_sound_terminator_style" --that's a big ass name
 	self.phalanx_minion_assault.no_retreat = false
+	self.phalanx_minion_assault.ewgf = nil
 	table.insert(self._enemy_list, "phalanx_minion_assault")
 end
 
@@ -3179,6 +3188,7 @@ function CharacterTweakData:_init_phalanx_vip(presets)
 	self.phalanx_vip.speech_prefix_p2 = nil
 	self.phalanx_vip.speech_prefix_count = nil
 	self.phalanx_vip.no_damage_mission = true
+	self.phalanx_vip.ewgf = nil
 	self.phalanx_vip.slowing_bullets = {
         duration = 1.5,
         power = 0.75,

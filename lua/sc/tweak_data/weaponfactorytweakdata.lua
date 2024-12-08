@@ -9772,7 +9772,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_famas", "resmod_famas", function(s
 	self.wpn_fps_ass_famas.adds.wpn_fps_upg_o_northtac = {
 		"wpn_fps_ass_famas_o_adapter"
 	}
-	
+
 	self.wpn_fps_ass_famas.override = self.wpn_fps_ass_famas.override or {}
 	self.wpn_fps_ass_famas.override.wpn_fps_snp_model70_iron_sight = { 
 		adds = {"wpn_fps_gre_arbiter_o_standard", "wpn_fps_ass_groza_o_adapter"}
@@ -15673,7 +15673,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_packrat", "resmod_packrat", functi
 	self.parts.wpn_fps_pis_packrat_ns_wick.supported = true
 	self.parts.wpn_fps_pis_packrat_ns_wick.stats = {
 		value = 6,
-		spread = 2,
+		spread = 3,
 		recoil = -2,
 		concealment = -2
 	}
@@ -15694,6 +15694,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_packrat", "resmod_packrat", functi
 	table.insert(self.wpn_fps_pis_packrat.uses_parts, "wpn_fps_upg_vg_ass_smg_stubby")
 	table.insert(self.wpn_fps_pis_packrat.uses_parts, "wpn_fps_smg_schakal_vg_surefire")
 
+	self.wpn_fps_pis_packrat_npc.override = deep_clone(self.wpn_fps_pis_packrat.override)
 	self.wpn_fps_pis_packrat_npc.uses_parts = deep_clone(self.wpn_fps_pis_packrat.uses_parts)
 
 end)
@@ -15765,7 +15766,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_schakal", "resmod_schakal", functi
 
 	self.parts.wpn_fps_smg_schakal_body_lower.adds = {"wpn_fps_smg_schakal_bolt_standard"}
 
-	self.wpn_fps_smg_schakal.override = self.wpn_fps_smg_schakal.override or {} 
+	self.wpn_fps_smg_schakal.override = self.wpn_fps_smg_schakal.override or {}
 	self.wpn_fps_smg_schakal.override.wpn_fps_upg_vg_ass_smg_stubby = {
 		stats = {
 			recoil = -2,
@@ -15851,11 +15852,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_desertfox", "resmod_desertfox", fu
 		}
 	}
 	
-	table.insert(self.wpn_fps_snp_desertfox.uses_parts, "wpn_fps_snp_model70_iron_sight")	
+	table.insert(self.wpn_fps_snp_desertfox.uses_parts, "wpn_fps_snp_model70_iron_sight")
 	
 	self.wpn_fps_snp_desertfox_npc.uses_parts = deep_clone(self.wpn_fps_snp_desertfox.uses_parts)
-
-
 
 end)
 
@@ -15882,6 +15881,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_x_packrat", "resmod_x_packrat", fu
 	table.insert(self.wpn_fps_x_packrat.uses_parts, "wpn_fps_pis_g18c_co_comp_2")
 	table.insert(self.wpn_fps_x_packrat_npc.uses_parts, "wpn_fps_pis_g18c_co_comp_2")	
 
+	self.wpn_fps_x_packrat_npc.override = deep_clone(self.wpn_fps_x_packrat.override)	
 	self.wpn_fps_x_packrat_npc.uses_parts = deep_clone(self.wpn_fps_x_packrat.uses_parts)	
 
 end)
