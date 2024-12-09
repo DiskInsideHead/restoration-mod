@@ -1,55 +1,22 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
-local shield = "units/pd2_mod_nypd/characters/ene_nypd_shield/ene_nypd_shield"
-local sniper = "units/pd2_mod_nypd/characters/ene_sniper_1/ene_sniper_1"
-local swat_rifle = "units/pd2_mod_nypd/characters/ene_nypd_swat_1/ene_nypd_swat_1"
-local swat_shotgun = "units/pd2_mod_nypd/characters/ene_nypd_swat_2/ene_nypd_swat_2"
-local swat_smg = "units/pd2_mod_nypd/characters/ene_nypd_swat_3/ene_nypd_swat_3"
-local swat_heavy_rifle = "units/pd2_mod_nypd/characters/ene_nypd_heavy_m4/ene_nypd_heavy_m4"
-local swat_heavy_shotgun = "units/pd2_mod_nypd/characters/ene_nypd_heavy_r870/ene_nypd_heavy_r870"
-local tank = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_bulldozer_minigun/ene_bulldozer_minigun") or "units/pd2_mod_nypd/characters/ene_bulldozer_1/ene_bulldozer_1"
-local taser = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_tazer_sc/ene_zeal_tazer_sc") or "units/pd2_mod_nypd/characters/ene_tazer_1/ene_tazer_1"
-local cloaker = (difficulty == 8 and "units/pd2_dlc_gitgud/characters/ene_zeal_cloaker_sc/ene_zeal_cloaker_sc") or "units/pd2_mod_nypd/characters/ene_spook_1/ene_spook_1"
 local pro_job = Global.game_settings and Global.game_settings.one_down
 local diff_scaling = 0.065 * difficulty
+local shield = ((difficulty == 8 and pro_job) and "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault" or "units/payday2/characters/ene_shield_2/ene_shield_2")
+local sniper = "units/payday2/characters/ene_sniper_1/ene_sniper_1"
+local swat_rifle = "units/payday2/characters/ene_swat_1/ene_swat_1"
+local swat_shotgun = "units/payday2/characters/ene_swat_2/ene_swat_2"
+local swat_heavy_rifle = "units/payday2/characters/ene_swat_heavy_1/ene_swat_heavy_1"
+local swat_heavy_shotgun = "units/payday2/characters/ene_swat_heavy_r870/ene_swat_heavy_r870"
+local tank = "units/payday2/characters/ene_bulldozer_1/ene_bulldozer_1"
+local taser = "units/payday2/characters/ene_tazer_1/ene_tazer_1"
+local cloaker = "units/payday2/characters/ene_spook_1/ene_spook_1"
 local hard_above = difficulty >= 3
 local overkill_above = difficulty >= 5
 local death_sentence = difficulty == 8
 local enabled_chance_extra_elevator_spawns = math.random() < diff_scaling
 local enabled_chance_helipad_shields = math.random() < diff_scaling
 local enabled_chance_helipad_dozer = math.random() < diff_scaling
-	
-	if difficulty == 6 then
-		shield = "units/pd2_mod_nypd/characters/ene_shield_1/ene_shield_1"
-		sniper = "units/payday2/characters/ene_sniper_2_sc/ene_sniper_2_sc"
-		swat_rifle = "units/pd2_mod_nypd/characters/ene_fbi_swat_1/ene_fbi_swat_1"
-		swat_shotgun = "units/pd2_mod_nypd/characters/ene_fbi_swat_2/ene_fbi_swat_2"
-		swat_smg = "units/pd2_mod_nypd/characters/ene_fbi_swat_3/ene_fbi_swat_3"
-		swat_heavy_rifle = "units/pd2_mod_nypd/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
-		swat_heavy_shotgun = "units/pd2_mod_nypd/characters/ene_fbi_heavy_r870_sc/ene_fbi_heavy_r870_sc"
-	elseif difficulty == 7 then
-		shield = "units/pd2_mod_nypd/characters/ene_shield_gensec/ene_shield_gensec"
-		sniper = "units/pd2_mod_nypd/characters/ene_sniper_3/ene_sniper_3"
-		swat_rifle = "units/pd2_mod_nypd/characters/ene_city_swat_1/ene_city_swat_1"
-		swat_shotgun = "units/pd2_mod_nypd/characters/ene_city_swat_2/ene_city_swat_2"
-		swat_smg = "units/pd2_mod_nypd/characters/ene_city_swat_3/ene_city_swat_3"
-		swat_heavy_rifle = "units/pd2_mod_nypd/characters/ene_city_heavy_g36/ene_city_heavy_g36"
-		swat_heavy_shotgun = "units/pd2_mod_nypd/characters/ene_city_heavy_r870/ene_city_heavy_r870"
-	elseif difficulty == 8 then
-		--PD3 styled heavy only squad xd
-		shield = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_shield_sc/ene_zeal_swat_shield_sc"
-		sniper = "units/pd2_dlc_gitgud/characters/ene_zeal_sniper/ene_zeal_sniper"
-		swat_rifle = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
-		swat_shotgun = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
-		swat_smg = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
-		swat_heavy_rifle = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_sc/ene_zeal_swat_heavy_sc"
-		swat_heavy_shotgun = "units/pd2_dlc_gitgud/characters/ene_zeal_swat_heavy_r870_sc/ene_zeal_swat_heavy_r870_sc"
-	end
-	
-	if pro_job and difficulty == 8 then
-		taser = "units/pd2_dlc_vip/characters/ene_titan_taser/ene_titan_taser"
-		shield = "units/pd2_dlc_vip/characters/ene_phalanx_1_assault/ene_phalanx_1_assault"
-		cloaker = "units/pd2_dlc_vip/characters/ene_spook_cloak_1/ene_spook_cloak_1"
-	end
+local swat_ambush_table = {swat_rifle, swat_rifle, swat_shotgun, swat_shotgun, swat_heavy_rifle, swat_heavy_rifle, swat_heavy_shotgun}
 
 local optsCloaker = {
     enemy = cloaker,
@@ -207,28 +174,8 @@ local optsTaser_Ambush = {
 	participate_to_group_ai = true,
     enabled = hard_above
 }
-local optsSWAT_Rifle = {
-    enemy = swat_rifle,
-	participate_to_group_ai = true,
-    enabled = true
-}
-local optsSWAT_Shotgun = {
-    enemy = swat_shotgun,
-	participate_to_group_ai = true,
-    enabled = true
-}
-local optsSWAT_SMG = {
-    enemy = swat_smg,
-	participate_to_group_ai = true,
-    enabled = true
-}
-local optsSWAT_HeavyRifle = {
-    enemy = swat_heavy_rifle,
-	participate_to_group_ai = true,
-    enabled = true
-}
-local optsSWAT_HeavyShotgun = {
-    enemy = swat_heavy_shotgun,
+local optsSWAT_Ambush = {
+    enemy_table = swat_ambush_table,
 	participate_to_group_ai = true,
     enabled = true
 }
@@ -257,25 +204,57 @@ local optsCloaker_SO = {
 	interval = 2,
     so_action = "AI_hunt"
 }
-local optsrespawn_taser_and_shields_1 = {
+local optsrespawn_taser_1 = {
 	on_executed = { 
-		{ id = 400047, delay = 45 },
-		{ id = 400048, delay = 46 },
-		{ id = 400049, delay = 47 }
+		{ id = 400047, delay = 45 }
 	},
 	elements = { 
 		400047
 	},
     event = "death"
 }
-local optsrespawn_taser_and_shields_2 = {
+local optsrespawn_shield_1 = {
 	on_executed = { 
-		{ id = 400053, delay = 47 },
-		{ id = 400054, delay = 46 },
-		{ id = 400055, delay = 45 }
+		{ id = 400048, delay = 45 }
+	},
+	elements = { 
+		400048
+	},
+    event = "death"
+}
+local optsrespawn_shield_2 = {
+	on_executed = { 
+		{ id = 400049, delay = 45 }
+	},
+	elements = { 
+		400049
+	},
+    event = "death"
+}
+local optsrespawn_taser_2 = {
+	on_executed = { 
+		{ id = 400053, delay = 45 }
 	},
 	elements = { 
 		400053
+	},
+    event = "death"
+}
+local optsrespawn_shield_3 = {
+	on_executed = { 
+		{ id = 400054, delay = 45 }
+	},
+	elements = { 
+		400054
+	},
+    event = "death"
+}
+local optsrespawn_shield_4 = {
+	on_executed = { 
+		{ id = 400055, delay = 45 }
+	},
+	elements = { 
+		400055
 	},
     event = "death"
 }
@@ -466,168 +445,168 @@ return {
             "swat_ambush_1",
             Vector3(-1368, -4156, 50),
             Rotation(0, 0, -0),
-            optsSWAT_Rifle
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400024,
             "swat_ambush_2",
             Vector3(-1428, -4156, 50),
             Rotation(0, 0, -0),
-            optsSWAT_Rifle
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400025,
             "swat_ambush_3",
             Vector3(-1499, -4156, 50),
             Rotation(0, 0, -0),
-            optsSWAT_SMG
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400026,
             "swat_ambush_4",
             Vector3(-1368, -4082, 50),
             Rotation(0, 0, -0),
-            optsSWAT_Shotgun
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400027,
             "swat_ambush_5",
             Vector3(-1428, -4082, 50),
             Rotation(0, 0, -0),
-            optsSWAT_Shotgun
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400028,
             "swat_ambush_6",
             Vector3(-1499, -4082, 50),
             Rotation(0, 0, -0),
-            optsSWAT_Rifle
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400029,
             "swat_ambush_7",
             Vector3(-1481, -5029, 50),
             Rotation(-180, 0, -0),
-            optsSWAT_HeavyRifle
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400030,
             "swat_ambush_8",
             Vector3(-1428, -5029, 50),
             Rotation(-180, 0, -0),
-            optsSWAT_HeavyShotgun
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400031,
             "swat_ambush_9",
             Vector3(-1369, -5029, 50),
             Rotation(-180, 0, -0),
-            optsSWAT_SMG
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400032,
             "swat_ambush_10",
             Vector3(-1477, -5102, 50),
             Rotation(-180, 0, -0),
-            optsSWAT_SMG
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400033,
             "swat_ambush_11",
             Vector3(-1425, -5102, 50),
             Rotation(-180, 0, -0),
-            optsSWAT_Shotgun
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400034,
             "swat_ambush_12",
             Vector3(-1370, -5102, 50),
             Rotation(-180, 0, -0),
-            optsSWAT_HeavyShotgun
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400035,
             "swat_ambush_13",
             Vector3(-5119, -5102, 50),
             Rotation(180, 0, -0),
-            optsSWAT_HeavyShotgun
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400036,
             "swat_ambush_14",
             Vector3(-5170, -5102, 50),
             Rotation(180, 0, -0),
-            optsSWAT_SMG
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400037,
             "swat_ambush_15",
             Vector3(-5229, -5102, 50),
             Rotation(180, 0, -0),
-            optsSWAT_SMG
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400038,
             "swat_ambush_16",
             Vector3(-5229, -5027, 50),
             Rotation(180, 0, -0),
-            optsSWAT_Rifle
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400039,
             "swat_ambush_17",
             Vector3(-5170, -5027, 50),
             Rotation(180, 0, -0),
-            optsSWAT_Rifle
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400040,
             "swat_ambush_18",
             Vector3(-5117, -5027, 50),
             Rotation(180, 0, -0),
-            optsSWAT_Shotgun
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400041,
             "swat_ambush_19",
             Vector3(-5117, -4157, 50),
             Rotation(0, 0, -0),
-            optsSWAT_HeavyShotgun
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400042,
             "swat_ambush_20",
             Vector3(-5173, -4157, 50),
             Rotation(0, 0, -0),
-            optsSWAT_HeavyShotgun
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400043,
             "swat_ambush_21",
             Vector3(-5230, -4157, 50),
             Rotation(0, 0, -0),
-            optsSWAT_SMG
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400044,
             "swat_ambush_22",
             Vector3(-5230, -4083, 50),
             Rotation(0, 0, -0),
-            optsSWAT_SMG
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400045,
             "swat_ambush_23",
             Vector3(-5175, -4083, 50),
             Rotation(0, 0, -0),
-            optsSWAT_Rifle
+            optsSWAT_Ambush
         ),
 		restoration:gen_dummy(
             400046,
             "swat_ambush_24",
             Vector3(-5118, -4083, 50),
             Rotation(0, 0, -0),
-            optsSWAT_Rifle
+            optsSWAT_Ambush
         ),
 		--Roof Acesss blockades
 		restoration:gen_dummy(
@@ -754,17 +733,45 @@ return {
 		--Respawns
 		restoration:gen_dummytrigger(
             400064,
-            "respawn_the_blockade_1",
+            "respawn_taser_1",
             Vector3(-2400, -3677, 375),
             Rotation(90, -0, -0),
-            optsrespawn_taser_and_shields_1
+            optsrespawn_taser_1
         ),
 		restoration:gen_dummytrigger(
             400065,
-            "respawn_the_blockade_2",
+            "respawn_taser_2",
             Vector3(-2400, -3577, 375),
             Rotation(90, -0, -0),
-            optsrespawn_taser_and_shields_2
+            optsrespawn_taser_2
+        ),
+        restoration:gen_dummytrigger(
+            400082,
+            "respawn_shield_1",
+            Vector3(-2400, -3677, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_1
+        ),
+		restoration:gen_dummytrigger(
+            400083,
+            "respawn_shield_2",
+            Vector3(-2400, -3577, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_2
+        ),
+        restoration:gen_dummytrigger(
+            400084,
+            "respawn_shield_3",
+            Vector3(-2400, -3677, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_3
+        ),
+		restoration:gen_dummytrigger(
+            400085,
+            "respawn_shield_4",
+            Vector3(-2400, -3577, 375),
+            Rotation(90, -0, -0),
+            optsrespawn_shield_4
         ),
 		--Helipad blockade
 		restoration:gen_dummy(

@@ -102,7 +102,7 @@ function PlayerStandard:_add_unit_to_char_table(char_table, unit, unit_type, ...
 	end
 end
 
-function PlayerStandard:push(vel, override_vel, override_vel_mult, allow_sprint)
+function PlayerStandard:push(vel, override_vel, override_vel_mult, allow_sprint, force_crouch)
 	local override_vel_mult = override_vel_mult or 0
 	if self._unit:mover() then
 		if override_vel then
@@ -115,6 +115,9 @@ function PlayerStandard:push(vel, override_vel, override_vel_mult, allow_sprint)
 	end
 	if not allow_sprint then
 		self:_interupt_action_running(managers.player:player_timer():time())
+	end
+	if force_crouch then
+		self:_start_action_ducking(managers.player:player_timer():time(), true)
 	end
 end
 
@@ -218,7 +221,7 @@ function PlayerStandard:_interupt_action_interact(t, input, complete)
 	end
 end
 
-function PlayerStandard:_start_action_ducking(t)
+function PlayerStandard:_start_action_ducking(t, no_slide)
 	--Here!
 	if self:_on_zipline() then
 		return
@@ -238,7 +241,7 @@ function PlayerStandard:_start_action_ducking(t)
 	self._ext_network:send("action_change_pose", 2, self._unit:position())
 	self:_upd_attention()
 	
-	if AdvMov and PlayerStandard._check_slide then
+	if AdvMov and PlayerStandard._check_slide and not no_slide then
 		self:_check_slide()
 	end
 end
@@ -1217,7 +1220,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 							}
 							local random = vars[math.random(#vars)]
 							local var_lr = (recoil_h and (recoil_h > 0 and -1) or (recoil_h < 0 and 1)) or 0
-							local fire_rate = weap_base:weapon_tweak_data().fire_mode_data.fire_rate * weap_base:fire_rate_multiplier() * 15
+							local fire_rate = weap_base:weapon_tweak_data().fire_mode_data.fire_rate --[[* weap_base:fire_rate_multiplier()]] * 15
 							local category_mul = 1
 							for _, category in ipairs(weap_base:categories()) do
 								local shake_mul = tweak_data[category] and tweak_data[category].shake_mul or 1
@@ -2659,6 +2662,24 @@ Hooks:PreHook(PlayerStandard, "update", "ResWeaponUpdate", function(self, t, dt)
 	if self._state_data.in_full_steelsight and not self:in_steelsight() then
 		self._state_data.in_full_steelsight = nil
 	end
+
+	if weapon._set_burst_mode and weapon.in_burst_mode then
+		if weapon._burst_ads_toggle then
+			if self:in_steelsight() and not weapon:in_burst_mode() then
+				weapon:_set_burst_mode(true, true)
+			elseif not self:in_steelsight()and weapon:in_burst_mode() and not self:_in_burst() then
+				weapon:_set_burst_mode(false, true)
+				managers.hud:set_teammate_weapon_firemode(HUDManager.PLAYER_PANEL, self._unit:inventory():equipped_selection(), weapon:fire_mode())
+			end
+		elseif weapon._burst_hipfire_toggle then
+			if self:in_steelsight() and weapon:in_burst_mode() and not self:_in_burst() then
+				weapon:_set_burst_mode(false, true)
+				managers.hud:set_teammate_weapon_firemode(HUDManager.PLAYER_PANEL, self._unit:inventory():equipped_selection(), weapon:fire_mode())
+			elseif not self:in_steelsight() and not weapon:in_burst_mode() then
+				weapon:_set_burst_mode(true, true)
+			end
+		end
+	end
 	
 end)
 
@@ -3261,13 +3282,15 @@ function PlayerStandard:_start_action_steelsight(t, gadget_state)
 	if self._state_data.in_steelsight then
 		local weap_base = self._equipped_unit:base()
 		if weap_base and weap_base._scope_overlay then
-			if not weap_base._steelsight_weapon_visible then
+			if not weap_base._steelsight_weapon_visible and set_viewmodel_visible then
 				set_viewmodel_visible(self,false)
 				weap_base:set_visibility_state(false)
 				weap_base:update_visibility_state()
 			end
-			managers.hud:set_ma40_overlay(weap_base._scope_overlay)
-			managers.hud:start_ma40_overlay()
+			if managers.hud.set_ma40_overlay then
+				managers.hud:set_ma40_overlay(weap_base._scope_overlay)
+				managers.hud:start_ma40_overlay()
+			end
 		end
 	end
 end
@@ -3278,8 +3301,10 @@ function PlayerStandard:full_steelsight()
 	local weap_hold = weap_base.weapon_hold and weap_base:weapon_hold() or weap_base:get_name_id()
 	local is_bow = table.contains(weap_base:weapon_tweak_data().categories, "bow")
 	local force_ads_recoil_anims = weap_base and weap_base:weapon_tweak_data().always_play_anims
-	if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
-		force_ads_recoil_anims = nil
+	if weap_base then
+		if weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
+			force_ads_recoil_anims = nil
+		end
 	end
 	local is_turret = managers.player:current_state() and managers.player:current_state() == "player_turret"
 	local zippy = weap_base and weap_base:weapon_tweak_data().zippy

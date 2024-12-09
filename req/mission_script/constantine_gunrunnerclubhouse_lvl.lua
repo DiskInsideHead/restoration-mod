@@ -1,36 +1,22 @@
 local difficulty = tweak_data:difficulty_to_index(Global.game_settings and Global.game_settings.difficulty or "normal")
 local pro_job = Global.game_settings and Global.game_settings.one_down
-local hunt_projob = false
+local hunt_projob = pro_job
+local ponr_value = (difficulty <= 5 and 480 or (difficulty == 6 or difficulty == 7) and 450) or 420
 local spring = "units/pd2_dlc_vip/characters/ene_spring/ene_spring"
-local spring_minion_1 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
-local spring_minion_2 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
-local spring_minion_3 = "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
-local spring_minion_4 = "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
-
-	if difficulty == 6 or difficulty == 7 then
-		spring_minion_1 = "units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2"
-	elseif difficulty == 8 then
-		spring_minion_1 = "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun"
-	end
-
-	if difficulty >= 6 then
-		spring_minion_2 = "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle"
-		spring_minion_3 = "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun"
-		spring_minion_4 = "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper"
-	end	
-
-	if pro_job then
-		hunt_projob = true
-	end
-
-	if difficulty <= 5 then
-		ponr_value = 480	
-	elseif difficulty == 6 or difficulty == 7 then
-		ponr_value = 450
-	else
-		ponr_value = 420
-	end
-
+local spring_minion_1 = (difficulty == 8 and "units/pd2_mod_omnia/characters/ene_bulldozer_minigun/ene_bulldozer_minigun" or (difficulty == 7 or difficulty == 6) and "units/pd2_mod_omnia/characters/ene_bulldozer_2/ene_bulldozer_2") or "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
+local spring_minion_2 = (difficulty >= 6 and "units/pd2_mod_sharks/characters/ene_titan_rifle/ene_titan_rifle") or "units/pd2_mod_sharks/characters/ene_fbi_heavy_1/ene_fbi_heavy_1"
+local spring_minion_3 = (difficulty >= 6 and "units/pd2_mod_sharks/characters/ene_titan_shotgun/ene_titan_shotgun") or "units/pd2_mod_sharks/characters/ene_fbi_heavy_r870/ene_fbi_heavy_r870"
+local spring_minion_4 = (difficulty >= 6 and "units/pd2_mod_sharks/characters/ene_titan_sniper/ene_titan_sniper") or "units/pd2_mod_sharks/characters/ene_fbi_swat_3/ene_fbi_swat_3"
+local minions_table = {
+		spring_minion_2,
+		spring_minion_2,
+		spring_minion_2,
+		spring_minion_3,
+		spring_minion_3,
+		spring_minion_3,
+		spring_minion_4,
+		spring_minion_4
+}
 local Captain = {
 	values = {
         enemy = spring
@@ -43,17 +29,7 @@ local Minion_1 = {
 }
 local Minion_2 = {
 	values = {
-        enemy = spring_minion_2
-    }
-}
-local Minion_3 = {
-	values = {
-        enemy = spring_minion_3
-    }
-}
-local Minion_4 = {
-	values = {
-        enemy = spring_minion_4
+        enemy = minions_table
     }
 }
 return {
@@ -79,10 +55,10 @@ return {
 	[100261] = Minion_2,
 	[100270] = Minion_2,
 	[100264] = Minion_2,
-	[100222] = Minion_3,
-	[100262] = Minion_3,
-	[100265] = Minion_3,
-	[100269] = Minion_3,
-	[100225] = Minion_4,
-	[100230] = Minion_4
+	[100222] = Minion_2,
+	[100262] = Minion_2,
+	[100265] = Minion_2,
+	[100269] = Minion_2,
+	[100225] = Minion_2,
+	[100230] = Minion_2
 }

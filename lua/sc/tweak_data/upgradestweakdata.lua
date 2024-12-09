@@ -520,6 +520,10 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 		4.25
 	}
 
+	self.values.player.body_armor.regen_delay[9] = 8.5
+	self.values.player.body_armor.deflection[9] = 0.00
+	self.values.player.body_armor.dodge_grace[9] = 1
+
 	self.values.rep_upgrades.values = {0}
 	
 	--Custom stuff for SC's mod, mainly suppression resistance and stuff--
@@ -1438,7 +1442,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 				self.skill_descs.ecm_2x = {
 					skill_value_b1 = tostring(self.values.player.marked_inc_dmg_distance[1][2] % 1 * 100).."%", -- +damage if player position > distance
 					skill_value_b2 = tostring(self.values.player.marked_inc_dmg_distance[1][1]/100), -- distance to get +damage
-					skill_value_p1 = tostring(self.values.player.marked_enemy_damage_mul) -- extra damage on all marked enemies
+					skill_value_p1 = tostring((self.values.player.marked_enemy_damage_mul - 1) * 100).."%" -- extra damage on all marked enemies
 				}
 
 			
@@ -1555,7 +1559,7 @@ Hooks:PostHook(UpgradesTweakData, "_init_pd2_values", "ResSkillsInit", function(
 						skill_value_b1 = tostring((1 - self.values.player.knockback_resistance [1]) * 100).."%", -- knockback resistance
 						skill_value_b2 = tostring(self.values.player.taser_malfunction[1].chance_to_trigger * 100).."%", -- taser malfunction trigger chance
 						skill_value_p1 = tostring(self.values.player.escape_taser[1]), -- escape time
-						skill_value_p2 = tostring(self.counter_taser_damage) -- Damage to taser when counter tase happen
+						skill_value_p2 = tostring(self.counter_taser_damage * 100).."%" -- Damage to taser when counter tase happen
 					}
 
 			--Sneaky Bastard
