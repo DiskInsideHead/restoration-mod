@@ -931,7 +931,7 @@ function PlayerStandard:_check_action_primary_attack(t, input, params)
 				if weap_base and weap_base:alt_fire_active() and weap_base._alt_fire_data and weap_base._alt_fire_data.ignore_always_play_anims then
 					force_ads_recoil_anims = nil
 				end
-				local manual_reloads = restoration.Options:GetValue("OTHER/WeaponHandling/ManualReloads")
+				local manual_reloads = tweak_data.weapon.stat_info.reload_marathon or restoration.Options:GetValue("OTHER/WeaponHandling/ManualReloads")
 				local queue_inputs = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShooting")
 				local queue_window = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingWindow") or 0.5
 				local queue_exlude = restoration.Options:GetValue("OTHER/WeaponHandling/QueuedShootingExclude") or 0.6
