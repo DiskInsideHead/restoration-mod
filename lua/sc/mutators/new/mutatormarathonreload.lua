@@ -1,13 +1,8 @@
---Spawn Cap Multipliers
+--PRESS R TO PAY RESPE- RELOAD
 MutatorReloadMarathon = MutatorReloadMarathon or class(BaseMutator)
 MutatorReloadMarathon._type = "MutatorReloadMarathon"
 MutatorReloadMarathon.name_id = "mutator_thecandlesburnoutforyou"
 MutatorReloadMarathon.desc_id = "mutator_thecandlesburnoutforyou_desc"
-MutatorReloadMarathon.reductions = {
-	money = 0,
-	exp = 0
-}
-MutatorReloadMarathon.disables_achievements = false
 MutatorReloadMarathon.categories = {
 	"gameplay"
 }

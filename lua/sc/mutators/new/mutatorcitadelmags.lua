@@ -1,13 +1,8 @@
---Spawn Cap Multipliers
+--Miami Mutilator eat your heart out
 MutatorMagazineMartyr = MutatorMagazineMartyr or class(BaseMutator)
 MutatorMagazineMartyr._type = "MutatorMagazineMartyr"
 MutatorMagazineMartyr.name_id = "mutator_letthesleepinggoddie"
 MutatorMagazineMartyr.desc_id = "mutator_letthesleepinggoddie_desc"
-MutatorMagazineMartyr.reductions = {
-	money = 0,
-	exp = 0
-}
-MutatorMagazineMartyr.disables_achievements = false
 MutatorMagazineMartyr.categories = {
 	"gameplay"
 }
