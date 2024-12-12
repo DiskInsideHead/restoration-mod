@@ -11041,8 +11041,9 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.wa2000.armor_piercing_chance = 1
 						self.wa2000.stats_modifiers = nil
 						self.wa2000.panic_suppression_chance = 0.05
-						self.wa2000.reload_speed_multiplier = 1.05
-						self.wa2000.timers.reload_exit_empty = 0.85
+						self.wa2000.reload_speed_multiplier = 1.33
+						self.wa2000.timers.reload_empty = 6.1
+						self.wa2000.timers.reload_exit_empty = 0.95
 						self.wa2000.timers.reload_exit_not_empty = 1
 
 					--Grom (SVD)
@@ -11084,8 +11085,10 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 						self.siltstone.armor_piercing_chance = 1
 						self.siltstone.stats_modifiers = nil
 						self.siltstone.panic_suppression_chance = 0.05
-						self.siltstone.timers.reload_exit_empty = 0.4
-						self.siltstone.timers.reload_exit_not_empty = 0.4
+						self.siltstone.timers.reload_empty = 3.1
+						self.siltstone.timers.reload_exit_empty = 0.6
+						self.siltstone.timers.reload_not_empty = 2.1
+						self.siltstone.timers.reload_exit_not_empty = 0.8
 
 					--Bernetti Rangehitter (Marlin SBL)
 						self.sbl.upgrade_blocks = nil
