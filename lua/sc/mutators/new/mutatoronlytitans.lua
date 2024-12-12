@@ -1706,4 +1706,5 @@ function MutatorOnlyTitans:setup(data)
 	}
 
 	end
+	end
 end
