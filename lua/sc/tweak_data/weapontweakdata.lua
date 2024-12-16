@@ -20487,7 +20487,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.holoar.stats_modifiers = nil
 				self.holoar.panic_suppression_chance = 0.05
-				self.holoar.holoar.reload_speed_multiplier = 1.2687
+				self.holoar.reload_speed_multiplier = 1.2687
 				self.holoar.sounds.no_fix = true
 				self.holoar.timers.reload_empty = 3.21
 				self.holoar.timers.reload_exit_empty = 1.15
