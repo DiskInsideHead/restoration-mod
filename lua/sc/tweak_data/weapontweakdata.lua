@@ -20451,6 +20451,49 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.bulldog.timers.reload_not_empty = 2
 				self.bulldog.timers.reload_exit_not_empty = 0.6
 			end
+
+			if self.holoar then
+				self.holoar.categories = { 
+					"assault_rifle"
+				}
+				self.holoar.recategorize = {"light_ar"}
+				self.holoar.damage_type = "assault_rifle"
+				self.holoar.CLIP_AMMO_MAX = 25
+				self.holoar.AMMO_MAX = 150
+				self.holoar.fire_mode_data.fire_rate = 0.18
+				self.holoar.CAN_TOGGLE_FIREMODE = false
+				self.holoar.FIRE_MODE = "auto"
+				self.holoar.kick = self.stat_info.kick_tables.vertical_kick
+				self.holoar.supported = true
+				self.holoar.ads_speed = 0.220
+				self.holoar.damage_falloff = {
+					start_dist = 5500,
+					end_dist = 10500,
+					min_mult = 0.8333
+				}
+				self.holoar.stats = {
+					damage = 24,
+					spread = 91,
+					recoil = 93,
+					spread_moving = 7,
+					zoom = 1,
+					concealment = 21,
+					suppression = 7,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 4,
+					reload = 20
+				}
+				self.holoar.stats_modifiers = nil
+				self.holoar.panic_suppression_chance = 0.05
+				self.holoar.holoar.reload_speed_multiplier = 1.2687
+				self.holoar.sounds.no_fix = true
+				self.holoar.timers.reload_empty = 3.21
+				self.holoar.timers.reload_exit_empty = 1.15
+				self.holoar.timers.reload_not_empty = 2.2
+				self.holoar.timers.reload_exit_not_empty = 0.75
+			end
 			
 		--Predator Pack
 			if self.owlfbullpup then

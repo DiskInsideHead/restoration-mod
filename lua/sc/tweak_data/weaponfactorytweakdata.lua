@@ -38730,6 +38730,16 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 
 	end
 
+	if self.parts.wpn_fps_ass_holoar_optic then
+
+		self.parts.wpn_fps_ass_holoar_optic.stats = { base_zoom_off = 1, zoom = 5, value = 0 }
+		self.parts.wpn_fps_ass_holoar_optic.stance_mod = {
+			wpn_fps_ass_holoar = {
+				translation = Vector3(0, -12, -2.73 )
+			}
+		}
+	end
+
 	if self.parts.wpn_fps_sho_bp12_b_std then
 
 		self.parts.wpn_fps_sho_bp12_burst.custom_stats = nil
