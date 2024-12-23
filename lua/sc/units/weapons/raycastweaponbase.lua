@@ -67,6 +67,7 @@ function RaycastWeaponBase:setup(...)
 	end
 	self._shots_without_releasing_trigger = 0
 	self._no_cheevo_kills_without_releasing_trigger = 0
+	self._shot_recoil_count = 0
 end
 
 function RaycastWeaponBase:get_damage_type()
@@ -193,7 +194,8 @@ function RaycastWeaponBase.collect_hits(from, to, setup_data, weapon_unit)
 				break
 			elseif hit.unit:in_slot(shield_mask) and (not can_shoot_through_shield or (is_semi_snp and distance > near_falloff_distance)) then
 				break
-			elseif hit.unit:in_slot(shield_mask) and (hit.unit:name():key() == 'af254947f0288a6c' or hit.unit:name():key() == '15cbabccf0841ff8') and not can_shoot_through_titan_shield then --Titan shields
+			elseif hit.unit:in_slot(shield_mask) and (hit.unit:name():key() == 'af254947f0288a6c' or hit.unit:name():key() == '15cbabccf0841ff8'  --Titan shields
+			or hit.unit:name():key() == '5deefee472c1903d' or hit.unit:name():key() == 'e26c602b7a43d7bb') and not can_shoot_through_titan_shield then --Marshall shields
 				break
 			elseif hit.unit:in_slot(shield_mask) and hit.unit:name():key() == '4a4a5e0034dd5340' then --Winters being a shit.
 				break						
@@ -610,10 +612,13 @@ function RaycastWeaponBase:fire(from_pos, direction, dmg_mul, shoot_player, spre
 		consume_ammo = true
 	end
 	--MG Specialist Skill
-	if is_player and self._shots_without_releasing_trigger then
-		self._shots_without_releasing_trigger = self._shots_without_releasing_trigger + 1
-		if self._bullets_until_free and self._shots_without_releasing_trigger % self._bullets_until_free == 0 then
-			consume_ammo = false
+	if is_player then
+		self._shot_recoil_count = self._shot_recoil_count + 1
+		if self._shots_without_releasing_trigger then
+			self._shots_without_releasing_trigger = self._shots_without_releasing_trigger + 1
+			if self._bullets_until_free and self._shots_without_releasing_trigger % self._bullets_until_free == 0 then
+				consume_ammo = false
+			end
 		end
 	end
 

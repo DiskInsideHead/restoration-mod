@@ -227,11 +227,11 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModQueuedShootingBurstExcludeTitleID"] = "Mid-Burst Input Buffer Limit",
 		["RestorationModQueuedShootingBurstExcludeDescID"] = "Limits the buffering of fire inputs made *during* a burst to weapons that have a burst delay *below* the value (ms) set by this option.",
 		["RestorationModNoADSRecoilAnimsTitleID"] = "No ADS Recoil Animations",
-		["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers)",
+		["RestorationModNoADSRecoilAnimsDescID"] = "Enable/disable ADS recoil animations. Some weapons are not affected by this option (i.e. Manually operated guns, bows, flamethrowers).",
 		["RestorationModNoSwapOnReviveTitleID"] = "No Forced Weapon Swap on Revive",
 		["RestorationModNoSwapOnReviveDescID"] = "Disables the forced weapon swap upon being revived when going down with a primary without Undying Aced.",
 		["RestorationModManualReloadsTitleID"] = "Manual Reloads",
-		["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty.",
+		["RestorationModManualReloadsDescID"] = "Disables automatic reloads when your magazine is empty. NOTE: Setting is ignored if the \"Reload Marathon\" mutator is active.",
 		["RestorationModSecondSightSprintTitleID"] = "Sprint button for second sight toggle",
 		["RestorationModSecondSightSprintDescID"] = "Use the sprint button instead of the gadget button to toggle secondary sights while ADS.\nWhile enabled gadgets can be toggled as they could prior to U232 but you cannot enter a sprint while ADS.",
 		["RestorationModADSTransitionStyleTitleID"] = "ADS Style",
@@ -2452,8 +2452,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 
 			--[[ PISTOLS ]]
 				--Gecko Pistol
-				["bm_tranq_maxim_sc_desc"] = "The world's first #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals damage over time with tranquilizer rounds.##",
-				["bm_tranq_x_maxim_sc_desc"] = "A pair of the world's first #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals damage over time with tranquilizer rounds.##",
+				["bm_tranq_maxim_sc_desc"] = "The world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals damage over time with tranquilizer rounds.##",
+				["bm_tranq_x_maxim_sc_desc"] = "A pair of the world's first commercially available #{skill_color}#integrally suppressed## semi-auto pistol, good handling and concealability tie in well with debilitating tranquilizer rounds.\n\n#{stats_positive}#Deals damage over time with tranquilizer rounds.##",
 				--Igor (APS)
 				["bm_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
 				["bm_x_stech_sc_desc"] = "A heavier, slower firing, machine pistol that lost favor due to its encumbrance. Its weight allows better control at the cost of concealing ability.",
@@ -2541,7 +2541,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_2006m_sc_desc"] = "A rare design of an already rare production run. A fancy way to send .38 down range.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				["bm_x_2006m_sc_desc"] = "The logistics of handling two of these is outweighed by the sheer badass factor.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				--Frenchman Model 87
-				["bm_model3_sc_desc"] = "A classic answer to the lifelong question \"What am I going to to about all these jerks all up in my face?\"\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
+				["bm_model3_sc_desc"] = "A classic answer to the lifelong question \"What am I going to do about all these jerks all up in my face?\"\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				["bm_x_model3_sc_desc"] = "Bring out your inner rootin' tootin' qualities and challenge the cops to a dual at high noon with these twin revolvers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 				--Raging bull
 				["bm_rage_sc_desc"] = "Very powerful short range cannon. It puts down mooks fast so long as you're lining up shots.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce multiple enemies.##",
@@ -2603,6 +2603,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_ksp45_desc_sc"] = "3-round burst submachine gun. High damage with moderate range. Burst fire spread is less efficient at long range.",
 					--LC10
 					["bm_w_lc10_desc_sc"] = "Full-auto submachine gun. Well rounded with excellent damage range and good accuracy. Moderate damage with an impressive muzzle velocity and a high fire rate.",
+					--REDACTED
+					["bm_w_redacted_desc_sc"] = "#{stats_positive}#REDACTED##\n\n#{risk}#This weapon shoots in 2-round auto-bursts when fired from the hip and shoots in semi-auto when fired while aiming down the sights.##",
 
 			--[[ MGs ]]
 				--Bootleg/HK416c
@@ -2799,6 +2801,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 				["bm_fal_ap25_sc_desc"] = "The Right Arm of the Free World. When you have to cut down mooks with heavy body armor, this is the gun you turn to.\n\n#{skill_color}#Deals 50% of its damage through body armor.##",
 				--ASS VAL
 				["bm_asval_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#deals 25% of its damage through body armor.##",
+				["bm_asval_spp_sc_desc"] = "Tiny rifle bullets might do for your run of the mill gunfighter, but others might go for this gun.\n\nComes #{skill_color}#integrally suppressed## and #{skill_color}#can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
+				["bm_wp_upg_i_asval_spp"] = "Valkyria SPP-ecial",
+				["bm_wp_upg_i_asval_spp_desc"] = "Upgraged internals mixed with specialized armor piercing ammo that can #{skill_color}#can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
 				--Galil
 				["bm_galil_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 25% of its damage through body armor.##",
 				["bm_galil_ap25_sc_desc"] = "A copycat of a rifle based on a Finnish design, which itself was also a derivative of the classic AK. Imitation is the sincerest form of flattery.\n\n#{skill_color}#Deals 50% of its damage through body armor.##",
@@ -4080,7 +4085,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					["bm_w_g3_msg"] = "H&K MSG90",
 					["bm_w_g3_psg"] = "H&K PSG-1",
 					["bm_w_g3_fo3"] = "R91",
-					["bm_g3_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies and thin walls.##",
+					["bm_g3_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 50% of its damage through body armor and can pierce enemies.##",
 					["bm_g3_ap25_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Deals 75% of its damage through body armor and can pierce enemies.##",
 					["bm_g3_sg1_sc_desc"] = "Acting as the big sister to the MP5 and HK21, this rifle's accuracy rivals that of snipers.\n\n#{skill_color}#Can pierce body armor, multiple enemies, shields within max damage range and thin walls.##",
 					["bm_wp_g3_b_short"] = "Short Barrel",
@@ -5059,7 +5064,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_bo_flashbang"] = "Your Opinion - My Choice",
 		["menu_mutator_flashbang_cooking_time"] = "Fuse Time (in seconds)",
 		["mutator_bo_flashbang_desc"] = "Flashbangs are now indestructible.",
-		["mutator_bo_flashbang_longdesc"] = "Flashbangs are now indestructible.",
+		["mutator_bo_flashbang_longdesc"] = "Flashbangs are now indestructible; fuse time can also be lowered.",
 
 		["mutator_grenade_mayhem"] = "Total Carnage!",
 		["menu_mutator_grenade_mayhem_usuals_toggle"] = "Include Commons and Elites",
@@ -5109,6 +5114,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_CG22"] = "A Criminal Carol",
 		["mutator_CG22_desc"] = "Some heists will have a christmas tree that spawns presents to shred or give to Hajrudin.",
 		["mutator_CG22_longdesc"] = "PAYDAY 2 2022 Christmas Event:\n\nChristmas Trees that appear on some heists will drop Christmas presents. Christmas Presents can either be shredded for temporary buffs during the heist, or given to Hajrudin for bonus XP, Cash, or Continental Coins. Doing either has a chance to spawn the Freeze-Thrower wielding Snowman Dozer.",
+
+		["mutator_thecandlesburnoutforyou"] = "Reload Marathon",
+		["mutator_thecandlesburnoutforyou_desc"] = "Disables the auto-reload that occurs when emptying your magazine; Reloads require a manual input",
+		["mutator_thecandlesburnoutforyou_longdesc"] = "Disables the auto-reload that occurs when emptying your magazine; Reloads require a manual input",
+
+		["mutator_letthesleepinggoddie"] = "Magazine Martyr",
+		["mutator_letthesleepinggoddie_desc"] = "Upon a non-empty reload, ammo from the previous magazine is lost.",
+		["mutator_letthesleepinggoddie_longdesc"] = "Upon a non-empty reload, ammo from the previous magazine is lost.\n\nNote: Weapons that retain their ammo during their reload (per-round loading, retention reloads, etc.) as well as reloads triggered by skills are exempt from the effects of this mutator.",
+		["mutator_letthesleepinggoddie_no_effect"] = "Unaffected by the \"Magazine Martyr\" mutator.",
+
 
 		["menu_cg22_post_objective_1_desc"] = "Kill 200 enemies with any sniper rifle.",
 		["menu_cg22_post_objective_2_desc"] = "Kill 15 Cloakers with the North Star rifle on Very Hard or above.",
@@ -5694,8 +5709,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 
 		--Shared Perks--
 		["menu_deckall_2_desc_sc"] = "Increases your headshot damage by #{skill_color}#25%.##\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
-		["menu_deckall_4_desc_sc"] = "You gain #{skill_color}#1## mobility.\n\nWhen wearing armor, your movement speed is #{skill_color}#15%## less affected.\n\nYou gain #{skill_color}#45%## more experience when you complete days and jobs.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
-		["menu_deckall_6_desc_sc"] = "Unlocks the #{skill_color}#Throwable Case## equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+		["menu_deckall_4_desc_sc"] = "You gain #{skill_color}#1## mobility.\n\nWhen wearing armor, your movement speed is #{skill_color}#15%## less affected.\n\nYou gain #{skill_color}#45%## more experience when you complete days and jobs.\n\n#{risk}#For non-Pro Jobs,## you reload your weapons #{skill_color}#10%## faster.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
+		["menu_deckall_6_desc_sc"] = "Unlocks the #{skill_color}#Throwable Case## equipment for you and your crew to use. The Throwable Case can be used to replenish throwables during a heist.\n\n#{risk}#For non-Pro Jobs,## you pick up #{skill_color}#33%## more ammo.\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
 		["menu_deckall_8_desc_sc"] = "Increases your Doctor Bag interaction speed by #{skill_color}#20%.##\n\nYou do #{skill_color}#25%## more damage.\n\n#{risk}#NOTE: Damage increase does not apply to## #{important_1}#Throwables or Launchers.##",
 
 		--Crook--

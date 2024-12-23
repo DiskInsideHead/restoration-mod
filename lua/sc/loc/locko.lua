@@ -229,7 +229,7 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
 		["RestorationModNoSwapOnReviveTitleID"] = "소생 시 강제 무기 교체 없음",
 		["RestorationModNoSwapOnReviveDescID"] = "불사 에이스 스킬이 없어도 주 무기로 쓰러졌을 때 소생 시 강제 무기 교체를 비활성화합니다.",
 		["RestorationModManualReloadsTitleID"] = "수동 재장전",
-		["RestorationModManualReloadsDescID"] = "탄창이 비어 있을 때 자동 재장전을 비활성화합니다.",
+		["RestorationModManualReloadsDescID"] = "탄창이 비어 있을 때 자동 재장전을 비활성화합니다. 주의: 해당 설정은 \"재장전 마라톤\" 뮤테이터가 활성화되어 있으면 무시됩니다.",
 		["RestorationModSecondSightSprintTitleID"] = "달리기 버튼 누르는 동안 보조 조준기 전환",
 		["RestorationModSecondSightSprintDescID"] = "정조준 중에 보조 조준기를 켜고 끄려면 가젯 버튼 대신 달리기 버튼을 사용합니다.\n활성화된 가젯은 U232 이전과 마찬가지로 전환이 가능하지만 정조준 중에는 달리기를 할 수 없습니다.",
 		["RestorationModADSTransitionStyleTitleID"] = "정조준 스타일",
@@ -2447,8 +2447,8 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 			
 			--[[ PISTOLS ]]
 				--Gecko Pistol
-				["bm_tranq_maxim_sc_desc"] = "세계 최초의 #{skill_color}#일체형 소음## 단발 권총으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 사용해 시간이 지남에 따라 피해를 가합니다.##",
-				["bm_tranq_x_maxim_sc_desc"] = "세계 최초의 #{skill_color}#일체형 소음## 단발 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 사용해 시간이 지남에 따라 피해를 가합니다.##",
+				["bm_tranq_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 단발 권총으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 사용해 시간이 지남에 따라 피해를 가합니다.##",
+				["bm_tranq_x_maxim_sc_desc"] = "세계 최초로 상업적으로 출시된 #{skill_color}#일체형 소음##가 장착된 단발 권총 한 쌍으로, 쇠약하게 만드는 마취탄을 사용하고 조작성과 은폐성이 뛰어납니다.\n\n#{stats_positive}#마취탄을 사용해 시간이 지남에 따라 피해를 가합니다.##",
 				--Igor (APS)
 				["bm_stech_sc_desc"] = "더 무겁고 발사 속도가 느린 기관권총으로, 휴대성이 떨어져 선호도가 떨어졌습니다. 무거운 무게 덕분에 은폐성을 희생한 대신 더 나은 반동 제어가 가능합니다.",
 				["bm_x_stech_sc_desc"] = "더 무겁고 발사 속도가 느린 기관권총으로, 휴대성이 떨어져 선호도가 떨어졌습니다. 무거운 무게 덕분에 은폐성을 희생한 대신 더 나은 반동 제어가 가능합니다.",
@@ -2597,8 +2597,10 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
 					--KSP 45
 					["bm_w_ksp45_desc_sc"] = "이 3점사로 발사하는 기관단총은 중간 사거리에서는 높은 대미지를 가지고 있지만, 점사의 탄퍼짐은 장거리에서는 효율성이 떨어집니다.",
 					--LC10
-					["bm_w_lc10_desc_sc"] = "뛰어난 대미지 사거리와 좋은 명중률을 갖춘 다재다능한 전자동 기관단총입니다. 인상적인 총구 속도와 높은 발사 속도로 적당한 데ㅐㄷ미지를 제공하죠.",
-			
+					["bm_w_lc10_desc_sc"] = "뛰어난 사거리와 좋은 명중률을 갖춘 다재다능한 전자동 기관단총입니다. 인상적인 총알 속도와 높은 발사 속도로 적당한 피해를 가하죠.",
+					--REDACTED
+					["bm_w_redacted_desc_sc"] = "#{stats_positive}#편집됨##\n\n#{risk}#이 무기는 지향 사격하면 2발씩 발사하고, 조준 상태로 사격하면 반자동으로 발사합니다.##",
+					
 			--[[ MGs ]]
 				--Bootleg/HK416c
 				["bm_w_tecci_desc_sc"] = "경기관총과 유사하지만 정확하게 납을 뿜을 수 있는 피스톤 작동식 소총입니다.",
@@ -5054,7 +5056,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_bo_flashbang"] = "당신의 의견은 나의 선택",
 		["menu_mutator_flashbang_cooking_time"] = "기폭 시간 (초 단위)",
 		["mutator_bo_flashbang_desc"] = "이제 섬광탄은 파괴되지 않습니다.",
-		["mutator_bo_flashbang_longdesc"] = "이제 섬광탄은 파괴되지 않습니다.",
+		["mutator_bo_flashbang_longdesc"] = "이제 섬광탄은 파괴되지 않으며, 기폭 시간을 단축시킬 수 있습니다.",
 		
 		["mutator_grenade_mayhem"] = "총체적 난국!",
 		["menu_mutator_grenade_mayhem_usuals_toggle"] = "일반 및 엘리트 적 포함",
@@ -5104,6 +5106,16 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 		["mutator_CG22"] = "크리미널 캐롤",
 		["mutator_CG22_desc"] = "하이스트에 크리스마스 트리가 스폰되어 선물을 으깨거나 하이루딘에게 줄 수 있습니다.",
 		["mutator_CG22_longdesc"] = "PAYDAY 2 2022년 크리스마스 이벤트:\n\n하이스트에 나타나는 크리스마스 트리는 크리스마스 선물을 떨어뜨립니다. 크리스마스 선물은 하이스트 도중에 분쇄하여 일시적인 버프를 받거나, 하이루딘에게 주어 보너스 경험치, 현금 또는 컨티넨탈 코인를 얻을 수 있습니다. 둘 중 하나를 수행하면 일정 확률로 냉기 방사기를 사용하는 스노우맨 도저가 스폰합니다.",		
+
+		["mutator_thecandlesburnoutforyou"] = "재장전 마라톤",
+		["mutator_thecandlesburnoutforyou_desc"] = "자동 재장전을 비활성화 하며, 탄창이 비었을 때 수동으로 재장전해야 합니다.",
+		["mutator_thecandlesburnoutforyou_longdesc"] = "자동 재장전을 비활성화 하며, 탄창이 비었을 때 수동으로 재장전해야 합니다.",
+
+		["mutator_letthesleepinggoddie"] = "탄창 희생",
+		["mutator_letthesleepinggoddie_desc"] = "비어 있지 않은 탄창을 재장전할 시 이전 탄창의 탄약이 사라집니다.",
+		["mutator_letthesleepinggoddie_longdesc"] = "비어 있지 않은 탄창을 재장전할 시 이전 탄창의 탄약이 사라집니다.\n\n주의: 재장전하는 동안 탄을 유지하는 무기(한 발당 장전, 유지 재장전 등)와 스킬에 의해 발동되는 재장전은 이 뮤테이터의 효과에서 제외됩니다.",
+		["mutator_letthesleepinggoddie_no_effect"] = "\"탄창 희생\" 뮤테이터에 영향을 받지 않습니다.",
+
 
 		["menu_cg22_post_objective_1_desc"] = "적 200명을 아무 저격총으로 처치하기.",
 		["menu_cg22_post_objective_2_desc"] = "매우 어려움 이상 난이도에서 클로커 15명을 North Star 저격소총으로 처치하기.",
@@ -5688,9 +5700,9 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Perk_Decks", function(
 		["menu_st_category_mod"] = "모드",
 
 		--Shared Perks--
-		["menu_deckall_2_desc_sc"] = "헤드샷 대미지가 #{skill_color}#25%## 증가합니다.\n\n당신은 추가로 #{skill_color}#25%##만큼의 대미지를 더 줍니다.\n\n#{risk}#주의:## #{important_1}#투척 무기, 발사기에는## #{risk}#대미지 증가가 적용되지 않습니다.##",
+		["menu_deckall_2_desc_sc"] = "헤드샷 대미지가 #{skill_color}#25%## 증가합니다.\n\n#{risk}#프로 잡이 아닐때의## 재장전 속도가 #{skill_color}#10%## 빨라집니다.\n\n당신은 추가로 #{skill_color}#25%##만큼의 대미지를 더 줍니다.\n\n#{risk}#주의:## #{important_1}#투척 무기, 발사기에는## #{risk}#대미지 증가가 적용되지 않습니다.##",
 		["menu_deckall_4_desc_sc"] = "방탄복의 기동성이 #{skill_color}#1##만큼 증가합니다.\n\n방탄복으로 인해 발생하는 속도 감소 효과가 #{skill_color}#15%##만큼 감소합니다.\n\n하이스트를 끝낼 때마다 얻는 경험치가 #{skill_color}#45%##만큼 증가합니다.\n\n당신은 추가로 #{skill_color}#25%##만큼의 대미지를 더 줍니다.\n\n#{risk}#주의:## #{important_1}#투척 무기, 발사기에는## #{risk}#대미지 증가가 적용되지 않습니다.##",
-		["menu_deckall_6_desc_sc"] = "하이스트 도중 당신과 당신의 팀원이 투척물을 보충할 수 있는 #{skill_color}#투척물 가방##을 소지할 수 있게 됩니다.\n\n당신은 추가로 #{skill_color}#25%##만큼의 대미지를 더 줍니다.\n\n#{risk}#주의:## #{important_1}#투척 무기, 발사기에는## #{risk}#대미지 증가가 적용되지 않습니다.##",
+		["menu_deckall_6_desc_sc"] = "하이스트 도중 당신과 당신의 팀원이 투척물을 보충할 수 있는 #{skill_color}#투척물 가방##을 소지할 수 있게 됩니다.\n\n#{risk}#프로 잡이 아닐때의## 탄약 회수량이 #{skill_color}#35%##만큼 증가합니다.\n\n당신은 추가로 #{skill_color}#25%##만큼의 대미지를 더 줍니다.\n\n#{risk}#주의:## #{important_1}#투척 무기, 발사기에는## #{risk}#대미지 증가가 적용되지 않습니다.##",
 		["menu_deckall_8_desc_sc"] = "의료 가방과 상호 작용하는 속도를 #{skill_color}#20%##만큼 상승시킵니다.\n\n당신은 추가로 #{skill_color}#25%##만큼의 대미지를 더 줍니다.\n\n#{risk}#주의:## #{important_1}#투척 무기, 발사기에는## #{risk}#대미지 증가가 적용되지 않습니다.##",
 
 		--Crook--
