@@ -14233,6 +14233,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_asval", "resmod_asval", function(s
 	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_ass_groza_m_speed")
 	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_upg_o_northtac")
 	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_upg_o_northtac_reddot")
+	table.insert(self.wpn_fps_ass_asval.uses_parts, "wpn_fps_upg_i_asval_spp")
 
 	self.wpn_fps_ass_asval_npc.override = deep_clone(self.wpn_fps_ass_asval.override)
 	self.wpn_fps_ass_asval_npc.uses_parts = deep_clone(self.wpn_fps_ass_asval.uses_parts)
@@ -20051,7 +20052,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_shak12", "resmod_shak12", function
 		can_shoot_through_wall = true,
 		can_shoot_through_shield = true,
 		ignore_rof_mult_anims = true,
-		rof_mult = 0.6,
+		rof_mult = 0.66666,
 		ads_speed_mult = 1.277777,
 		hip_mult = 2,
 		alt_ammo_pickup_min_mul = 0.875,
@@ -24415,6 +24416,48 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			recoil = -8,
 			concealment = -4
 		},
+		internal_part = true,
+		dlc = "sc"
+	}
+
+	self.parts.wpn_fps_upg_i_asval_spp = {
+		pcs = {},
+		type = "custom",
+		sub_type = "singlefire",
+		name_id = "bm_wp_upg_i_asval_spp",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_singlefire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {
+			value = 10,
+			damage = 15,
+			total_ammo_mod = -102,
+			reload = -1,
+			spread = 2,
+			recoil = -4
+		},
+		custom_stats = {
+			lock_semi = true,
+			alt_desc = "bm_asval_spp_sc_desc",
+			rof_mult = 0.611111,
+			armor_piercing_override = 1,
+			can_shoot_through_wall = true,
+			can_shoot_through_shield = true,
+			can_shoot_through_enemy = true,
+			can_shoot_through_enemy_unlim = true,
+			ignore_rof_mult_anims = true,
+			hip_mult = 1.666666,
+			damage_min_mult = 0.75,
+			sms = 0.7,
+			alt_ammo_pickup_min_mul = 0.625,
+			alt_ammo_pickup_max_mul = 0.625,
+			ammo_pickup_min_mul = 0.625,
+			ammo_pickup_max_mul = 0.625
+		},
+		perks = { "fire_mode_single" },
 		internal_part = true,
 		dlc = "sc"
 	}
