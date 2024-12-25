@@ -16325,6 +16325,12 @@ end)
 --Contraband	
 Hooks:PostHook(WeaponFactoryTweakData, "_init_contraband", "resmod_contraband", function(self)
 
+	self.parts.wpn_fps_ass_contraband_o_standard.stance_mod = {
+		wpn_fps_ass_contraband = {
+			translation = Vector3(0, -7, 0)
+		}
+	}
+	
 	--Stock Adapter
 	self.wpn_fps_ass_contraband.stock_adapter = "wpn_fps_upg_m4_s_adapter"
 	self.wpn_fps_ass_contraband_npc.stock_adapter = "wpn_fps_upg_m4_s_adapter"
@@ -23041,31 +23047,6 @@ Hooks:PostHook(WeaponFactoryTweakData, "_init_kacchainsaw", "resmod_kacchainsaw"
 		ads_speed_mult = 1.075
 	}
 
-	self.parts.wpn_fps_lmg_kacchainsaw_adverse = {
-		pcs = {},
-		type = "custom",
-		sub_type = "autofire",
-		name_id = "bm_wp_upg_i_kacchainsaw_adverse",
-		a_obj = "a_body",
-		has_description = true,
-		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
-		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
-		supported = true,
-		stats = {
-			value = 7,
-			spread = -10,
-			recoil = -6
-		},
-		custom_stats = {
-			rof_mult = 1.571428571,
-			falloff_start_mult = 0.19230769,
-			falloff_end_mult = 0.78571428
-		},
-		internal_part = true,
-		dlc = "sc"
-	}
-
 	self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.supported = true
 	self.parts.wpn_fps_lmg_kacchainsaw_conversionkit.stats = {
 		value = 2
@@ -23593,6 +23574,31 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		is_a_unlockable = true,
 		forbids = {
 			"wpn_fps_upg_extra_mp_lock"
+		},
+		internal_part = true,
+		dlc = "sc"
+	}
+
+	self.parts.wpn_fps_lmg_kacchainsaw_adverse = {
+		pcs = {},
+		type = "custom",
+		sub_type = "autofire",
+		name_id = "bm_wp_upg_i_kacchainsaw_adverse",
+		a_obj = "a_body",
+		has_description = true,
+		alt_icon = "guis/textures/pd2/blackmarket/icons/mods/wpn_fps_upg_i_autofire",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		supported = true,
+		stats = {
+			value = 7,
+			spread = -10,
+			recoil = -6
+		},
+		custom_stats = {
+			rof_mult = 1.571428571,
+			falloff_start_mult = 0.19230769,
+			falloff_end_mult = 0.78571428
 		},
 		internal_part = true,
 		dlc = "sc"
@@ -24431,6 +24437,7 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
 		supported = true,
+		keep_damage = true,
 		stats = {
 			value = 10,
 			damage = 15,
@@ -32521,6 +32528,9 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 					value = 0,
 					gadget_zoom = 1
 				}
+				self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.custom_Stats = {
+					ads_speed_mult_active = 0.5
+				}
 		
 				--(M308) Mini 308 Magazine
 				self.parts.wpn_fps_ass_m14_m_curve.supported = true
@@ -38745,8 +38755,8 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 			wpn_fps_lmg_mx63_o_rear = {
 				stance_mod = {
 					wpn_fps_lmg_mx63 = {
-						translation = Vector3(-0.11, -0, -0.02),
-						rotation = Rotation(-0.07, 0, 0)
+						translation = Vector3(-0.06, -8, -0.02),
+						rotation = Rotation(0.01, 0, 0)
 					}
 				}	
 			},
@@ -38759,6 +38769,22 @@ Hooks:PostHook( WeaponFactoryTweakData, "create_bonuses", "SC_mods", function(se
 		self.parts.wpn_fps_lmg_mx63_barrel_short.supported = true
 		self.parts.wpn_fps_lmg_mx63_barrel_short.stats = deep_clone(barrels.short_b2_stats)
 		self.parts.wpn_fps_lmg_mx63_barrel_short.custom_stats = deep_clone(barrels.short_b2_stats)
+
+		self.wpn_fps_lmg_mx63.override = self.wpn_fps_lmg_mx63.override or {}
+		self.wpn_fps_lmg_mx63.override.wpn_fps_lmg_kacchainsaw_adverse = {
+			stats = {
+				spread = -5,
+				recoil = -2
+			},
+			custom_stats = {
+				rof_mult = 1.30909,
+				falloff_start_mult = 0.75,
+				falloff_end_mult = 0.78571428
+			}
+		}
+
+		table.insert(self.wpn_fps_lmg_mx63.uses_parts, "wpn_fps_lmg_kacchainsaw_adverse")
+		self.wpn_fps_lmg_mx63_npc.uses_parts = deep_clone(self.wpn_fps_lmg_mx63.uses_parts)
 
 	end
 
@@ -42642,8 +42668,8 @@ if self.wpn_fps_smg_ak5s then
 	for factory_id, i in pairs(self) do
 		if self[factory_id] and self[factory_id].uses_parts then
 			self.parts.wpn_fps_upg_fl_ass_smg_sho_pointshoot.stance_mod[factory_id] = {
-				translation = Vector3(-4, 0, -13),
-				rotation = Rotation(0, 0, -45)
+				translation = Vector3(-4, 0, -16),
+				rotation = Rotation(0, 0, -30)
 			}
 		end
 	end

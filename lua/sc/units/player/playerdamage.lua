@@ -1566,7 +1566,8 @@ Hooks:PostHook(PlayerDamage, "update" , "ResDamageInfoUpdate" , function(self, u
 		passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance", 0)
 		passive_dodge = passive_dodge + pm:upgrade_value("player", "crouch_dodge_chance_burglar", 0)
 	elseif self._unit:movement():running() then --Duck and Cover aced.
-		passive_dodge = passive_dodge + pm:upgrade_value("player", "run_dodge_chance", 0)
+		local fatigue = (not self._unit:movement():is_above_stamina_threshold() and 0.5) or 1
+		passive_dodge = passive_dodge + (pm:upgrade_value("player", "run_dodge_chance", 0) * fatigue)
 	elseif self._unit:movement():zipline_unit() then
 		passive_dodge = passive_dodge + pm:upgrade_value("player", "on_zipline_dodge_chance", 0)
 	end
