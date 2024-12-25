@@ -17095,7 +17095,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.wmtx.FIRE_MODE = "single"
 				self.wmtx.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.wmtx.kick = self.stat_info.kick_tables.vertical_kick
-				self.mp153.kick_pattern = {
+				self.wmtx.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},
 					{2, self.stat_info.kick_tables.vertical_kick},
 					{3, self.stat_info.kick_tables.right_kick},
@@ -17538,7 +17538,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.galilace.BURST_FIRE = false						
 				self.galilace.fire_mode_data.fire_rate = 0.07692307
 				self.galilace.kick = self.stat_info.kick_tables.moderate_kick
-				self.galil.kick_pattern = {
+				self.galilace.kick_pattern = {
 					{0, self.stat_info.kick_tables.moderate_kick},
 					{8, self.stat_info.kick_tables.right_kick},
 					{11, self.stat_info.kick_tables.moderate_kick},
@@ -17750,7 +17750,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.skspug.fire_mode_data = {}
 				self.skspug.fire_mode_data.fire_rate = 0.12
 				self.skspug.kick = self.stat_info.kick_tables.moderate_right_kick
-				self.sks.kick_pattern = {
+				self.skspug.kick_pattern = {
 					{0, self.stat_info.kick_tables.vertical_kick},
 					{4, self.stat_info.kick_tables.moderate_kick},
 					{7, self.stat_info.kick_tables.right_kick},
@@ -18674,7 +18674,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.deckard.fire_mode_data.fire_rate = 0.19047619047
 				self.deckard.AMMO_MAX = 30
 				self.deckard.kick = self.stat_info.kick_tables.moderate_kick
-				self.model3.kick_pattern = {
+				self.deckard.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},
 					{2, self.stat_info.kick_tables.moderate_kick},
 					{4, self.stat_info.kick_tables.moderate_right_kick}
@@ -19355,7 +19355,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.kurisumasu.AMMO_MAX = 120
 				self.kurisumasu.fire_mode_data.fire_rate = 0.0833333333
 				self.kurisumasu.kick = self.stat_info.kick_tables.moderate_kick
-				self.amcar.kick_pattern = {
+				self.kurisumasu.kick_pattern = {
 					{0, self.stat_info.kick_tables.moderate_kick},
 					{6, self.stat_info.kick_tables.moderate_right_kick},
 					{8, self.stat_info.kick_tables.right_kick},
@@ -19499,7 +19499,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti_viper.recategorize = { "light_pis" }		
 				self.tti_viper.damage_type = "light_pistol"
 				self.tti_viper.kick = self.stat_info.kick_tables.vertical_kick
-				self.tti_2011.kick_pattern = {
+				self.tti_viper.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},
 					{4, self.stat_info.kick_tables.vertical_kick},
 					{7, self.stat_info.kick_tables.moderate_right_kick},
@@ -20016,7 +20016,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.m4_usasoc.FIRE_MODE = "auto"
 				self.m4_usasoc.kick = {}
 				self.m4_usasoc.kick = self.stat_info.kick_tables.moderate_kick
-				self.m16.kick_pattern = {
+				self.m4_usasoc.kick_pattern = {
 					{0, self.stat_info.kick_tables.left_kick},
 					{3, self.stat_info.kick_tables.vertical_kick},
 					{6, self.stat_info.kick_tables.moderate_left_kick},
@@ -20177,7 +20177,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.ksp45.BURST_FIRE_RECOIL_MULTIPLIER = 0.55
 				self.ksp45.BURST_FIRE_LAST_RECOIL_MULTIPLIER = 1
 				self.ksp45.kick = self.stat_info.kick_tables.even_recoil
-				self.hajk.kick_pattern = {
+				self.ksp45.kick_pattern = {
 					{0, self.stat_info.kick_tables.left_recoil},
 					{3, self.stat_info.kick_tables.even_recoil},
 					{6, self.stat_info.kick_tables.left_recoil},
@@ -20637,7 +20637,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				self.tti_dracarys.muzzleflash = "effects/payday2/particles/weapons/big_51b_auto_fps" --"effects/particles/shotgun/shotgun_gen"
 				self.tti_dracarys.rays = 9
 				self.tti_dracarys.kick = self.stat_info.kick_tables.even_recoil
-				self.sko12.kick_pattern = {
+				self.tti_dracarys.kick_pattern = {
 					{0, self.stat_info.kick_tables.right_kick},
 					{3, self.stat_info.kick_tables.even_recoil},
 					{5, self.stat_info.kick_tables.moderate_right_kick},
@@ -21020,7 +21020,7 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 					self.akilo105_2022.AMMO_MAX = 150
 					self.akilo105_2022.fire_mode_data.fire_rate = 0.09202453
 					self.akilo105_2022.kick = self.stat_info.kick_tables.right_recoil
-					self.ak74.kick_pattern = {
+					self.akilo105_2022.kick_pattern = {
 						{0, self.stat_info.kick_tables.right_kick},
 						{6, self.stat_info.kick_tables.moderate_right_kick},
 						{10, self.stat_info.kick_tables.pattern_r2},
@@ -21348,6 +21348,71 @@ Hooks:PostHook( WeaponTweakData, "init", "SC_weapons", function(self)
 				}
 				self.doot_eternal_shotgun.stats_modifiers = nil
 				self.doot_eternal_shotgun.panic_suppression_chance = 0.05
+			end
+
+			if self.bolter_40k then --+++ 40K Bolter +++--
+				self.bolter_40k.bmp = 40000
+				self.bolter_40k.categories = {
+					"smg",
+					"bige"
+				}
+				self.bolter_40k.recategorize = { "heavy_smg" }
+				self.bolter_40k.damage_type = "anti_materiel"
+				self.bolter_40k.has_description = true
+				self.bolter_40k.desc_id = "bm_w_redacted_desc_sc"
+				self.bolter_40k.upgrade_blocks = nil
+				self.bolter_40k.CLIP_AMMO_MAX = 15
+				self.bolter_40k.AMMO_MAX = 30
+				self.bolter_40k.muzzleflash = "effects/payday2/particles/weapons/awp_muzzle"
+				self.bolter_40k.shell_ejection = "effects/payday2/particles/weapons/shells/shell_shak"
+				self.bolter_40k.fire_mode_data.fire_rate = 0.333334
+				self.bolter_40k.BURST_FIRE_RATE_MULTIPLIER = 2.2222
+				self.bolter_40k.BURST_FIRE_RATE_MULTIPLIER_ALT = true
+				self.bolter_40k.BURST_FIRE_INIT = 2
+				self.bolter_40k.BURST_FIRE = 2
+				self.bolter_40k.BURST_FIRE_HIPFIRE_TOGGLE = true
+				self.bolter_40k.AUTO_BURST = true
+				self.bolter_40k.FIRE_MODE = "single"
+				self.bolter_40k.CAN_TOGGLE_FIREMODE = false
+				self.bolter_40k.sms = 0.6
+				self.bolter_40k.kick = deep_clone(self.stat_info.kick_tables.vertical_kick)
+				self.bolter_40k.kick_pattern = {
+					{0, self.stat_info.kick_tables.pattern_r1},
+					{2, self.stat_info.kick_tables.pattern_r2},
+					{3, self.stat_info.kick_tables.pattern_v2},
+					{4, self.stat_info.kick_tables.pattern_l2},
+					{5, self.stat_info.kick_tables.pattern_l1},
+					{6, self.stat_info.kick_tables.pattern_v4},
+				}
+				self.bolter_40k.supported = true
+				self.bolter_40k.ads_speed = 0.560
+				self.bolter_40k.damage_falloff = {
+					start_dist = 8000,
+					end_dist = 20000,
+					min_mult = 0.5
+				}
+				self.bolter_40k.stats = {
+					damage = 120,
+					spread = 76,
+					recoil = 5,
+					spread_moving = 8,
+					zoom = 1,
+					concealment = 10,
+					suppression = 4,
+					alert_size = 2,
+					extra_ammo = 101,
+					total_ammo_mod = 400,
+					value = 9,
+					reload = 20
+				}
+				self.bolter_40k.stats_modifiers = nil
+				self.bolter_40k.armor_piercing_chance = 1
+				self.bolter_40k.sounds.use_fix = nil
+				self.bolter_40k.panic_suppression_chance = 0.05
+				self.bolter_40k.use_vapor_trail = true
+				self.bolter_40k.trail_effect = "_dmc/effects/sterwers_trail_m"
+				self.bolter_40k.trail_effect_npc = "_dmc/effects/sterwers_trail_m_npc"
+				self.bolter_40k.bullet_class = "InstantExplosiveBulletBase"
 			end
 
 			if self.owd_m1a then --RJC9000's OTWD M1A
