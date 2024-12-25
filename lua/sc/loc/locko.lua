@@ -5565,7 +5565,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Skills", function(loc)
 
 				--Moving Target--
 				["menu_dire_need_beta_sc"] = "움직이는 표적",
-				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n당신의 착용감이 #{risk}#$skill_value_b3##부터 #{risk}#$skill_value_b2##포인트만큼 감소할 때마다 이동 속도가 #{skill_color}#$skill_value_b1##만큼 추가로 상승합니다. 최대 이동 속도 상승률은 #{skill_color}#$skill_value_b4##입니다.\n\n조준하는 동안 이동 속도가 #{skill_color}#$skill_value_b5##만큼 더 빨라집니다.\n\n#{risk}#주의: 조준하는 동안의 이동 속도는 현재 자세의 최대 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n당신의 착용감이 #{risk}#$skill_value_p3##부터 #{risk}#$skill_value_p2##포인트만큼 감소할 때마다 이동 속도가 #{skill_color}#$skill_value_p1##만큼 추가로 상승합니다. 최대 이동 속도 상승률은 #{skill_color}#$skill_value_p4##입니다.\n\n달리는 동안에는 회피 게이지가 초당 #{skill_color}#$skill_value_p5##만큼 채워지고, 짚라인을 타는 동안에는 회피 게이지가 초당 #{skill_color}#$skill_value_p6##만큼 채워집니다.",
+				["menu_dire_need_beta_desc_sc"] = "베이식: #{owned}#$basic##\n당신의 착용감이 #{risk}#$skill_value_b3##부터 #{risk}#$skill_value_b2##포인트만큼 감소할 때마다 이동 속도가 #{skill_color}#$skill_value_b1##만큼 추가로 상승합니다. 최대 이동 속도 상승률은 #{skill_color}#$skill_value_b4##입니다.\n\n조준하는 동안 이동 속도가 #{skill_color}#$skill_value_b5##만큼 더 빨라집니다.\n\n#{risk}#주의: 조준하는 동안의 이동 속도는 현재 자세의 최대 속도로 제한됩니다.##\n\n에이스: #{owned}#$pro##\n당신의 착용감이 #{risk}#$skill_value_p3##부터 #{risk}#$skill_value_p2##포인트만큼 감소할 때마다 이동 속도가 #{skill_color}#$skill_value_p1##만큼 추가로 상승합니다. 최대 이동 속도 상승률은 #{skill_color}#$skill_value_p4##입니다.\n\n달리는 동안에는 회피 게이지가 초당 #{skill_color}#$skill_value_p5##만큼씩 채워지고 (피로 상태이면 절반으로 감소), 짚라인을 타는 동안에는 회피 게이지가 초당 #{skill_color}#$skill_value_p6##만큼씩 채워집니다.",
 
 				--Shockproof
 				["menu_insulation_beta_sc"] = "절연갑옷",
