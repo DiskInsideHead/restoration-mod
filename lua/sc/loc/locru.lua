@@ -4479,8 +4479,7 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
         if Month == "4" and Day == "1" then
             mypersonalbigdoogs = 1
         end
-        --if not easterless and mypersonalbrainrot <= mypersonalbigdoogs then
-        if true then
+        if not easterless and mypersonalbrainrot <= mypersonalbigdoogs then
             LocalizationManager:add_localized_strings(
                 {
                 	--Амарок 900
