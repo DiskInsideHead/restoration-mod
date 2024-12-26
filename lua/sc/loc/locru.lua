@@ -1853,11 +1853,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
                 --[[--TO RU--]]
 				["bm_menu_jiisuri_stock"] = "Приклад",
                 ["bm_menu_upotte_grip"] = "Рукоятка",
-                --["bm_menu_ro_barrel"] = "Revolver Ocelot",
-                --["bm_menu_ro_stock"] = "Revolver Ocelot",
-                --["bm_menu_ro_modifier"] = "Revolver Ocelot",
-                --["bm_menu_ro_charm"] = "Revolver Ocelot",
-                --["bm_menu_ro_grip"] = "Revolver Ocelot",
+                ["bm_menu_ro_barrel"] = "Ствол",
+                ["bm_menu_ro_stock"] = "Приклад",
+                ["bm_menu_ro_modifier"] = "Модификаторы",
+                ["bm_menu_ro_charm"] = "Брелок",
+                ["bm_menu_ro_grip"] = "Рукоятка",
                 --Weapon categories--
                 ["menu_pistol"] = "Пистолеты",
                 ["menu_light_pis"] = "Легкие пистолеты",
