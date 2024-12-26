@@ -1853,11 +1853,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization", function(loc)
                 --[[--TO RU--]]
 				["bm_menu_jiisuri_stock"] = "Приклад",
                 ["bm_menu_upotte_grip"] = "Рукоятка",
-                ["bm_menu_ro_barrel"] = "Revolver Ocelot",
-                ["bm_menu_ro_stock"] = "Revolver Ocelot",
-                ["bm_menu_ro_modifier"] = "Revolver Ocelot",
-                ["bm_menu_ro_charm"] = "Revolver Ocelot",
-                ["bm_menu_ro_grip"] = "Revolver Ocelot",
+                --["bm_menu_ro_barrel"] = "Revolver Ocelot",
+                --["bm_menu_ro_stock"] = "Revolver Ocelot",
+                --["bm_menu_ro_modifier"] = "Revolver Ocelot",
+                --["bm_menu_ro_charm"] = "Revolver Ocelot",
+                --["bm_menu_ro_grip"] = "Revolver Ocelot",
                 --Weapon categories--
                 ["menu_pistol"] = "Пистолеты",
                 ["menu_light_pis"] = "Легкие пистолеты",
@@ -3458,11 +3458,11 @@ Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Weapons", function(loc
                         ["bm_wp_deagle_m_extended"] = "12rnd Desert Eagle Magazine",
                         ["bm_wp_deagle_b_long"] = '10" Long Barrel',
                         --SAA
-                        ["bm_w_peacemaker"] = "Revolver Ocelot",
-                        ["bm_wp_peacemaker_barrel_long"] = "Revolver Ocelot",
-                        ["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
-                        ["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
-                        ["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot",
+                        --["bm_w_peacemaker"] = "Revolver Ocelot",
+                        --["bm_wp_peacemaker_barrel_long"] = "Revolver Ocelot",
+                        --["bm_wp_peacemaker_barrel_short"] = "Revolver Ocelot",
+                        --["bm_wp_peacemaker_handle_bling"] = "Revolver Ocelot",
+                        --["bm_wp_peacemaker_rifle_stock"] = "Revolver Ocelot",
                         --RUS-12
                         ["bm_w_rsh12"] = "KPB RSh-12",
                         --Shatter's Fury
