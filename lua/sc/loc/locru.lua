@@ -190,9 +190,9 @@ Hooks:Add("LocalizationManagerPostInit", "ResMod_english_Localization", function
                 --WEAPON HANDLING
 				["RestorationModStaticAimTitleID"]                       = "Покачивание в прицеле",
 				["RestorationModStaticAimDescID"]                        = "Включает визуальное покачивание во время прицеливания. Требуется перезапуск. ПРИ ОТКЛЮЧЕНИИ, НЕКОТОРУЮ ОПТИКУ БУДЕТ НЕВОЗМОЖНО ИСПОЛЬЗОВАТЬ.",
-				                --[[--TO RU--]]
+				--[[--TO RU--]]
 				["RestorationModBigScopeOffsetTitleID"]                  = "\"big Scope\" Смещение вьювмоделей",
-				                --[[--TO RU--]]
+				--[[--TO RU--]]
 				["RestorationModBigScopeOffsetDescID"]                   = "Слегка наклоняет и смещает Viewmodel при использовании крупной оптики.",
 				["RestorationModViewmodelMovementTitleID"]               = "Движение вьювмоделей",
 				["RestorationModViewmodelMovementDescID"]                = "Стиль движения моделей оружия при кручении камеры. Требует перезапуск.",
@@ -4471,9 +4471,9 @@ if ai_type == r then
     Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
             LocalizationManager:add_localized_strings(
                 {
-                    ["hud_assault_assault"] = "Идет операция Murkywater",
-                    ["hud_assault_cover"]   = "MANTENTE A CUBIERTO",
-                    ["hud_assault_alpha"]   = "ОПЕРАЦИЯ MURKYWATER"
+					["hud_assault_assault"] = "ИДЕТ ШТУРМ НАЕМНИКОВ",
+					["hud_assault_cover"]   = "ОСТАВАЙТЕСЬ В УКРЫТИИ",
+					["hud_assault_alpha"]   = "ШTУPM HAЕMHИKOB"
                 }
             )
         end
@@ -4482,9 +4482,9 @@ elseif ai_type == z then
     Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
             LocalizationManager:add_localized_strings(
                 {
-                    ["hud_assault_assault"] = "Идет операция Murkywater",
-                    ["hud_assault_cover"]   = "MANTENTE A CUBIERTO",
-                    ["hud_assault_alpha"]   = "ОПЕРАЦИЯ MURKYWATER"
+					["hud_assault_assault"] = "Итде Плоиецский Шрутм",
+					["hud_assault_cover"]   = "ОСТВЙТСЬ В УРКЫТИИ...МОЗГИИ",
+					["hud_assault_alpha"]   = "ПЛОИЕЦСКИЙ ШРУТМ"
                 }
             )
         end
@@ -4493,9 +4493,9 @@ elseif ai_type == f then
     Hooks:Add("LocalizationManagerPostInit", "SC_Localization_Ticker", function(loc)
             LocalizationManager:add_localized_strings(
                 {
-                    ["hud_assault_assault"] = "Идет операция Murkywater",
-                    ["hud_assault_cover"]   = "MANTENTE A CUBIERTO",
-                    ["hud_assault_alpha"]   = "ОПЕРАЦИЯ MURKYWATER"
+					["hud_assault_assault"] = "Asalto En Marcha",
+					["hud_assault_cover"]   = "MANTENTE A CUBIERTO",
+					["hud_assault_alpha"]   = "ASALTO"
                 }
             )
         end
